@@ -640,7 +640,7 @@ export default function LandingPage() {
         {/* =========================================================================
             SECTION C — MEASURABLE INTELLIGENCE (Impact Metrics Over Video)
             ========================================================================= */}
-        <section id="impact" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-[#071d16]/30 backdrop-blur-sm">
+        <section id="impact" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-[#071d16]/20 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
             {/* Section Header */}
@@ -657,51 +657,113 @@ export default function LandingPage() {
               </p>
             </div>
 
-            {/* 3 Impact Metric Cards */}
+            {/* 3 Impact Metric Cards with Apple-Style Luxury Glassmorphism */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
-              <div className="p-8 rounded-2xl bg-[#0c1626]/80 border border-white/10 backdrop-blur-md space-y-4 shadow-xl">
-                <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block">
-                  Average Idle Reduction
-                </span>
-                <div className="text-5xl lg:text-6xl font-extrabold font-mono text-emerald-400 tracking-tight">
-                  +10.4%
+              {/* Card 1: Idle Stock Reduction */}
+              <div
+                className="group relative p-8 rounded-[20px] transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(12, 22, 38, 0.45) 50%, rgba(7, 29, 22, 0.30) 100%)",
+                  backdropFilter: "blur(18px)",
+                  WebkitBackdropFilter: "blur(18px)",
+                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                  boxShadow:
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                }}
+              >
+                {/* Top Subtle Edge Reflection */}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+
+                <div className="space-y-4">
+                  <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
+                    Average Idle Reduction
+                  </span>
+                  <div className="text-5xl lg:text-6xl font-extrabold font-mono text-emerald-400 tracking-tight drop-shadow-sm">
+                    +10.4%
+                  </div>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                <p className="text-xs text-slate-300 leading-relaxed font-sans pt-4 border-t border-white/10">
                   Unweighted average across all 16 items compared to historical fixed-plan ordering. High-bulk items like PCC Poles achieve up to +74% reduction.
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#0c1626]/80 border border-white/10 backdrop-blur-md space-y-4 shadow-xl">
-                <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block">
-                  Site Service Level
-                </span>
-                <div className="text-5xl lg:text-6xl font-extrabold font-mono text-white tracking-tight">
-                  95.4%
+              {/* Card 2: Site Service Level */}
+              <div
+                className="group relative p-8 rounded-[20px] transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.18) 0%, rgba(12, 22, 38, 0.45) 50%, rgba(7, 29, 22, 0.25) 100%)",
+                  backdropFilter: "blur(18px)",
+                  WebkitBackdropFilter: "blur(18px)",
+                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                  boxShadow:
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                }}
+              >
+                {/* Top Subtle Edge Reflection */}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+
+                <div className="space-y-4">
+                  <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
+                    Site Service Level
+                  </span>
+                  <div className="text-5xl lg:text-6xl font-extrabold font-mono text-white tracking-tight drop-shadow-sm">
+                    95.4%
+                  </div>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                <p className="text-xs text-slate-300 leading-relaxed font-sans pt-4 border-t border-white/10">
                   Unweighted average simulated field erection availability across all active construction months, maintaining contractor uptime without over-ordering.
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#0c1626]/80 border border-white/10 backdrop-blur-md space-y-4 shadow-xl">
-                <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block">
-                  Causal Engine Benchmark
-                </span>
-                <div className="text-5xl lg:text-6xl font-extrabold font-mono text-[#F28C28] tracking-tight">
-                  1.52ms
+              {/* Card 3: Causal Engine Benchmark */}
+              <div
+                className="group relative p-8 rounded-[20px] transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.18) 0%, rgba(12, 22, 38, 0.45) 50%, rgba(7, 29, 22, 0.25) 100%)",
+                  backdropFilter: "blur(18px)",
+                  WebkitBackdropFilter: "blur(18px)",
+                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                  boxShadow:
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                }}
+              >
+                {/* Top Subtle Edge Reflection */}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+
+                <div className="space-y-4">
+                  <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
+                    Causal Engine Benchmark
+                  </span>
+                  <div className="text-5xl lg:text-6xl font-extrabold font-mono text-[#F28C28] tracking-tight drop-shadow-sm">
+                    1.52ms
+                  </div>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                <p className="text-xs text-slate-300 leading-relaxed font-sans pt-4 border-t border-white/10">
                   Instantaneous in-memory TypeScript causal simulation execution. Zero round-trips to remote databases; strictly instantaneous client-side evaluation.
                 </p>
               </div>
 
             </div>
 
-            {/* Engineering Disclosure Footnote */}
-            <div className="p-4 rounded-xl bg-[#071d16]/75 border border-[#0F5C45]/50 backdrop-blur-md text-xs font-mono text-slate-300 flex items-start gap-3 shadow-lg">
-              <AlertCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-              <span>
+            {/* Thinner Benchmark Glass Notification Panel */}
+            <div
+              className="relative py-3.5 px-5 rounded-xl text-xs font-mono text-slate-300 flex items-center gap-3 transition-colors duration-200 shadow-lg"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(15, 92, 69, 0.28) 0%, rgba(7, 29, 22, 0.38) 50%, rgba(15, 92, 69, 0.20) 100%)",
+                backdropFilter: "blur(18px)",
+                WebkitBackdropFilter: "blur(18px)",
+                border: "1px solid rgba(15, 92, 69, 0.55)",
+                boxShadow:
+                  "inset 0 1px 1px 0 rgba(255, 255, 255, 0.12), 0 10px 25px -10px rgba(0, 0, 0, 0.35)",
+              }}
+            >
+              <AlertCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span className="leading-relaxed">
                 All benchmarks reflect retrospective causal replay across 44 months of Kanpur contractor move logs (Mar 2023 – Oct 2026). They evaluate algorithm trade-offs under zero future peeking rather than guaranteed real-world future savings.
               </span>
             </div>
