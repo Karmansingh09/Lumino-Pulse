@@ -157,15 +157,15 @@ export default function LuminoAgentPanel({
         {/* Panel Header */}
         <div className="p-4 bg-[#0f172a] border-b border-[#1e293b] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
-              <Sparkles className="w-5 h-5 text-blue-400" />
+            <div className="p-2 rounded-xl bg-[#0F5C45]/20 border border-[#0F5C45]/40 text-emerald-300">
+              <Sparkles className="w-5 h-5 text-emerald-400" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-sm font-bold text-white">
                   Lumino Supply-Chain Agent
                 </h2>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#0F5C45]/20 text-emerald-300 border border-[#0F5C45]/50">
                   Tool-Calling Copilot
                 </span>
               </div>
@@ -198,10 +198,10 @@ export default function LuminoAgentPanel({
                     setQuery(p.text);
                     handleSend(p.text);
                   }}
-                  className="p-2 text-left text-xs bg-[#131d2e] hover:bg-[#1a263c] border border-[#1e293b] hover:border-blue-700/60 rounded-lg text-slate-300 hover:text-white transition-colors flex items-center justify-between gap-2"
+                  className="p-2 text-left text-xs bg-[#131d2e] hover:bg-[#1a263c] border border-[#1e293b] hover:border-emerald-600/50 rounded-lg text-slate-300 hover:text-white transition-colors flex items-center justify-between gap-2"
                 >
                   <span className="truncate">{p.label}</span>
-                  <span className="text-[10px] text-blue-400 shrink-0 font-medium">Run →</span>
+                  <span className="text-[10px] text-emerald-400 shrink-0 font-medium">Run →</span>
                 </button>
               ))}
             </div>
@@ -210,8 +210,8 @@ export default function LuminoAgentPanel({
           {/* Loading Indicator */}
           {loading && (
             <div className="p-6 bg-[#0f172a] rounded-xl border border-[#1e293b] text-center space-y-3 animate-pulse">
-              <div className="w-8 h-8 mx-auto rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center">
-                <RefreshCw className="w-4 h-4 animate-spin text-blue-400" />
+              <div className="w-8 h-8 mx-auto rounded-full bg-[#0F5C45]/20 text-emerald-400 flex items-center justify-center">
+                <RefreshCw className="w-4 h-4 animate-spin text-emerald-400" />
               </div>
               <div className="text-xs font-semibold text-white">
                 Querying 231,076-row ledger &amp; causal simulation engine...
@@ -252,8 +252,8 @@ export default function LuminoAgentPanel({
                           className="p-2.5 rounded-lg bg-[#0b0f19] border border-[#1e293b] space-y-1"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="font-mono font-bold text-blue-400 text-[11px] flex items-center gap-1.5">
-                              <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />
+                            <span className="font-mono font-bold text-emerald-400 text-[11px] flex items-center gap-1.5">
+                              <span className="w-2 h-2 rounded-full bg-[#0F5C45] inline-block" />
                               {tc.tool}()
                             </span>
                             <span className="font-mono text-[10px] text-slate-500">
@@ -274,7 +274,7 @@ export default function LuminoAgentPanel({
               <div className="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b] space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-[#1e293b]">
                   <span className="text-xs font-bold text-white flex items-center gap-1.5">
-                    <FileText className="w-4 h-4 text-blue-400" />
+                    <FileText className="w-4 h-4 text-emerald-400" />
                     Executive Operational Brief
                   </span>
                   <button
@@ -434,12 +434,12 @@ export default function LuminoAgentPanel({
               }
             }}
             placeholder={`Ask about ${activeItem} in ${activeMonth} or draft an order/transfer...`}
-            className="flex-1 bg-[#1e293b] text-white text-xs px-3 py-2.5 rounded-lg border border-[#334155] focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 bg-[#1e293b] text-white text-xs px-3 py-2.5 rounded-lg border border-[#334155] focus:outline-none focus:ring-2 focus:ring-[#0F5C45] focus:border-[#0F5C45]"
           />
           <button
             onClick={() => handleSend()}
             disabled={loading || !query.trim()}
-            className="p-2.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white rounded-lg transition-colors"
+            className="p-2.5 bg-[#0F5C45] hover:bg-[#0c4b38] disabled:opacity-50 text-white rounded-lg transition-colors shadow-md shadow-[#0F5C45]/25"
           >
             <Send className="w-4 h-4" />
           </button>

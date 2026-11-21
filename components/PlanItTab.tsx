@@ -150,13 +150,13 @@ export default function PlanItTab({
       <div className="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b] shadow-lg flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">
         <div className="flex-1 min-w-[280px]">
           <label className="block text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-            <Package className="w-3.5 h-3.5 text-blue-400" />
+            <Package className="w-3.5 h-3.5 text-emerald-400" />
             Material Item Under Simulation
           </label>
           <select
             value={selectedItem}
             onChange={(e) => onSelectItem(e.target.value)}
-            className="w-full bg-[#1e293b] text-[#f8fafc] text-sm font-medium rounded-lg border border-[#334155] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-slate-500 transition-colors"
+            className="w-full bg-[#1e293b] text-[#f8fafc] text-sm font-medium rounded-lg border border-[#334155] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0F5C45] focus:border-[#0F5C45] hover:border-slate-500 transition-colors"
           >
             {items.map((it) => (
               <option key={it.item_code} value={it.item_code}>
@@ -167,7 +167,7 @@ export default function PlanItTab({
         </div>
 
         <div className="flex items-center gap-2 self-start sm:self-auto pt-2 sm:pt-0">
-          <span className="px-2.5 py-1 text-xs font-semibold rounded-md bg-emerald-950/60 border border-emerald-800 text-emerald-300 flex items-center gap-1">
+          <span className="px-2.5 py-1 text-xs font-semibold rounded-md bg-[#0F5C45]/20 border border-[#0F5C45]/50 text-emerald-300 flex items-center gap-1">
             <Sparkles className="w-3 h-3 text-emerald-400" />
             Live Walk-Forward Engine (<span className="text-white">~2ms</span>)
           </span>
@@ -189,7 +189,7 @@ export default function PlanItTab({
             <span
               className={`text-xs font-bold px-2 py-0.5 rounded border ${
                 simResult.summary.idleReductionPct >= 0
-                  ? "bg-emerald-950 text-emerald-300 border-emerald-800"
+                  ? "bg-[#0F5C45]/20 text-emerald-300 border-[#0F5C45]/50"
                   : "bg-red-950 text-red-300 border-red-800"
               }`}
             >
@@ -208,22 +208,22 @@ export default function PlanItTab({
               {formatNumber(simResult.summary.avgActualIdle)} {currentItemMeta.unit}
             </span>
           </div>
-          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-emerald-500/10 rounded-full pointer-events-none" />
+          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-[#0F5C45]/10 rounded-full pointer-events-none" />
         </div>
 
         {/* Card 2: Site Service Level */}
-        <div className="bg-[#0f172a] p-4 rounded-xl border border-blue-950/60 bg-gradient-to-br from-[#0f172a] to-blue-950/20 relative overflow-hidden shadow">
+        <div className="bg-[#0f172a] p-4 rounded-xl border border-[#0F5C45]/40 bg-gradient-to-br from-[#0f172a] to-[#0F5C45]/10 relative overflow-hidden shadow">
           <div className="flex items-center justify-between text-[#94a3b8] mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-400 flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-blue-400" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-200 flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
               Site Service Level
             </span>
             <span
               className={`text-xs font-bold px-2 py-0.5 rounded border ${
                 simResult.summary.serviceLevelPct >= 90
-                  ? "bg-blue-950 text-blue-300 border-blue-800"
+                  ? "bg-[#0F5C45]/20 text-emerald-300 border-[#0F5C45]/50"
                   : simResult.summary.serviceLevelPct >= 80
-                  ? "bg-amber-950 text-amber-300 border-amber-800"
+                  ? "bg-[#F28C28]/20 text-[#F28C28] border-[#F28C28]/40"
                   : "bg-red-950 text-red-300 border-red-800"
               }`}
             >
@@ -238,27 +238,27 @@ export default function PlanItTab({
             <span>Shortage Months:</span>
             <span
               className={`font-semibold ${
-                simResult.summary.shortageMonths === 0 ? "text-emerald-400" : "text-amber-400"
+                simResult.summary.shortageMonths === 0 ? "text-emerald-400" : "text-[#F28C28]"
               }`}
             >
               {simResult.summary.shortageMonths} / 44 months
             </span>
           </div>
-          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-blue-500/10 rounded-full pointer-events-none" />
+          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-[#0F5C45]/10 rounded-full pointer-events-none" />
         </div>
 
         {/* Card 3: Peak Yard Congestion */}
-        <div className="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b] relative overflow-hidden shadow">
+        <div className="bg-[#0f172a] p-4 rounded-xl border border-[#F28C28]/30 relative overflow-hidden shadow">
           <div className="flex items-center justify-between text-[#94a3b8] mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
-              <Layers className="w-4 h-4 text-amber-400" />
+            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 text-[#F28C28]">
+              <Layers className="w-4 h-4 text-[#F28C28]" />
               Peak Yard Congestion
             </span>
             <span className="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
               Peak Month
             </span>
           </div>
-          <div className="text-2xl font-bold text-amber-400 tracking-tight">
+          <div className="text-2xl font-bold text-[#F28C28] tracking-tight">
             {formatNumber(simResult.summary.peakPlanIdle)}{" "}
             <span className="text-xs font-normal text-slate-400">{currentItemMeta.unit} (Plan)</span>
           </div>
@@ -268,21 +268,21 @@ export default function PlanItTab({
               {formatNumber(simResult.summary.peakActualIdle)} {currentItemMeta.unit}
             </span>
           </div>
-          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-amber-500/5 rounded-full pointer-events-none" />
+          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-[#F28C28]/10 rounded-full pointer-events-none" />
         </div>
 
         {/* Card 4: Effective Lead Time */}
         <div className="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b] relative overflow-hidden shadow">
           <div className="flex items-center justify-between text-[#94a3b8] mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-blue-400" />
+            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 text-slate-300">
+              <Clock className="w-4 h-4 text-emerald-400" />
               Effective Lead Time
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 font-mono">
+            <span className="text-xs px-2 py-0.5 rounded bg-[#0F5C45]/20 text-emerald-300 border border-[#0F5C45]/50 font-mono">
               ~{simResult.summary.effectiveLeadMonths} mo
             </span>
           </div>
-          <div className="text-2xl font-bold text-blue-400 tracking-tight">
+          <div className="text-2xl font-bold text-white tracking-tight">
             {simResult.summary.effectiveLeadDays}{" "}
             <span className="text-base font-normal text-slate-400">Days</span>
           </div>
@@ -292,7 +292,7 @@ export default function PlanItTab({
               {currentItemMeta.lead_time_days}d + {params.leadTimeSlippageDays}d stress
             </span>
           </div>
-          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-blue-500/5 rounded-full pointer-events-none" />
+          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-[#0F5C45]/5 rounded-full pointer-events-none" />
         </div>
       </div>
 
@@ -350,7 +350,7 @@ export default function PlanItTab({
           <div className="space-y-2">
             <div className="flex justify-between items-center text-xs">
               <span className="font-semibold text-slate-300">Demand Lookback Window</span>
-              <span className="font-mono font-bold text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-800">
+              <span className="font-mono font-bold text-emerald-300 bg-[#0F5C45]/20 px-2 py-0.5 rounded border border-[#0F5C45]/50">
                 {params.smoothingWindow} Months
               </span>
             </div>
@@ -361,7 +361,7 @@ export default function PlanItTab({
                   onClick={() => setParams((prev) => ({ ...prev, smoothingWindow: w }))}
                   className={`py-1.5 text-xs font-semibold rounded border transition-colors ${
                     params.smoothingWindow === w
-                      ? "bg-blue-600 border-blue-500 text-white shadow-sm"
+                      ? "bg-[#0F5C45] border-[#1b7d5e] text-white shadow-sm"
                       : "bg-[#1e293b] border-[#334155] text-slate-400 hover:text-slate-200"
                   }`}
                 >
@@ -378,7 +378,7 @@ export default function PlanItTab({
           <div className="space-y-2">
             <div className="flex justify-between items-center text-xs">
               <span className="font-semibold text-slate-300">Vendor Lead-Time Stress Delay</span>
-              <span className="font-mono font-bold text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800">
+              <span className="font-mono font-bold text-[#F28C28] bg-[#F28C28]/20 px-2 py-0.5 rounded border border-[#F28C28]/40">
                 +{params.leadTimeSlippageDays} Days
               </span>
             </div>
@@ -389,7 +389,7 @@ export default function PlanItTab({
                   onClick={() => setParams((prev) => ({ ...prev, leadTimeSlippageDays: d }))}
                   className={`py-1.5 text-xs font-semibold rounded border transition-colors ${
                     params.leadTimeSlippageDays === d
-                      ? "bg-amber-600 border-amber-500 text-white shadow-sm"
+                      ? "bg-[#F28C28] border-[#d97706] text-white shadow-sm"
                       : "bg-[#1e293b] border-[#334155] text-slate-400 hover:text-slate-200"
                   }`}
                 >
@@ -521,10 +521,10 @@ export default function PlanItTab({
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className={`p-2 rounded-lg flex items-center justify-center transition-colors ${
+              className={`p-2 rounded-lg flex items-center justify-center transition-colors shadow-sm ${
                 isPlaying
-                  ? "bg-amber-600 hover:bg-amber-500 text-white"
-                  : "bg-blue-600 hover:bg-blue-500 text-white"
+                  ? "bg-[#F28C28] hover:bg-[#d97706] text-white"
+                  : "bg-[#0F5C45] hover:bg-[#0c4b38] text-white shadow-[#0F5C45]/20"
               }`}
               title={isPlaying ? "Pause simulation replay" : "Play step-by-step replay"}
             >
@@ -534,7 +534,7 @@ export default function PlanItTab({
             <div>
               <div className="text-xs font-bold text-white flex items-center gap-2">
                 <span>Month {timeIndex + 1} of 44:</span>
-                <span className="font-mono text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-800">
+                <span className="font-mono text-emerald-300 bg-[#0F5C45]/20 px-2 py-0.5 rounded border border-[#0F5C45]/50">
                   {activeMonthRecord?.month}
                 </span>
               </div>
@@ -560,7 +560,7 @@ export default function PlanItTab({
               setTimeIndex(parseInt(e.target.value));
               if (isPlaying) setIsPlaying(false);
             }}
-            className="w-full accent-blue-500 cursor-pointer h-2 bg-slate-800 rounded-lg"
+            className="w-full accent-[#0F5C45] cursor-pointer h-2 bg-slate-800 rounded-lg"
           />
           <div className="flex justify-between text-[10px] text-slate-500 mt-1">
             <span>2023-03 (Kickoff)</span>
@@ -584,9 +584,9 @@ export default function PlanItTab({
                   <span
                     className={`px-3 py-1 text-xs font-bold rounded-lg border ${
                       activeMonthRecord.action.includes("ORDER")
-                        ? "bg-blue-950 text-blue-300 border-blue-700"
+                        ? "bg-[#0F5C45]/20 text-emerald-300 border-[#0F5C45]/60"
                         : activeMonthRecord.action === "TRANSFER"
-                        ? "bg-amber-950 text-amber-300 border-amber-700"
+                        ? "bg-[#F28C28]/20 text-[#F28C28] border-[#F28C28]/40"
                         : "bg-slate-800 text-slate-300 border-slate-700"
                     }`}
                   >
@@ -616,9 +616,9 @@ export default function PlanItTab({
                 {onOpenAgent && (
                   <button
                     onClick={onOpenAgent}
-                    className="w-full mt-3 py-1.5 px-2.5 rounded-lg bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/40 text-blue-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                    className="w-full mt-3 py-1.5 px-2.5 rounded-lg bg-[#0F5C45]/20 hover:bg-[#0F5C45]/35 border border-[#0F5C45]/50 text-emerald-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
                   >
-                    <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
                     <span>AI Action Brief &amp; Draft PO</span>
                   </button>
                 )}

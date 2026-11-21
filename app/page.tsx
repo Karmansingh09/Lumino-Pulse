@@ -40,7 +40,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="relative min-h-screen text-[#f8fafc] font-sans antialiased selection:bg-[#0F5C45]/50 selection:text-white overflow-x-hidden bg-[#07140e]">
+    <div className="relative min-h-screen text-[#f8fafc] font-sans antialiased selection:bg-[#0F5C45]/50 selection:text-white overflow-x-hidden bg-transparent">
       
       {/* =========================================================================
           1. GLOBAL PERSISTENT FIXED VIDEO BACKGROUND (Full-Viewport Stationary Canvas)
@@ -57,12 +57,12 @@ export default function LandingPage() {
           <source src="/videos/lumino-hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Subtle, non-dull global overlay to keep original emerald and glass animation vibrant */}
+        {/* Subtle, crystal-clear global overlay to keep original emerald and glass animation vibrant */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(180deg, rgba(7, 29, 22, 0.30) 0%, rgba(11, 15, 25, 0.25) 30%, rgba(7, 29, 22, 0.35) 70%, rgba(11, 15, 25, 0.55) 100%)",
+              "linear-gradient(180deg, rgba(7, 29, 22, 0.20) 0%, rgba(10, 20, 18, 0.15) 35%, rgba(7, 29, 22, 0.22) 70%, rgba(10, 20, 18, 0.35) 100%)",
           }}
         />
 
@@ -71,7 +71,7 @@ export default function LandingPage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(90deg, rgba(11, 15, 25, 0.55) 0%, rgba(11, 15, 25, 0.25) 45%, transparent 80%)",
+              "linear-gradient(90deg, rgba(7, 29, 22, 0.40) 0%, rgba(7, 29, 22, 0.15) 45%, transparent 80%)",
           }}
         />
       </div>
@@ -87,11 +87,11 @@ export default function LandingPage() {
         <header
           className="sticky top-0 z-30 w-full transition-colors"
           style={{
-            background: "rgba(12, 22, 38, 0.55)",
-            backdropFilter: "blur(18px)",
-            WebkitBackdropFilter: "blur(18px)",
-            borderBottom: "1px solid rgba(255, 255, 255, 0.10)",
-            boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.35)",
+            background: "rgba(7, 29, 22, 0.45)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            borderBottom: "1px solid rgba(255, 255, 255, 0.14)",
+            boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.35), inset 0 -1px 0 0 rgba(255, 255, 255, 0.05)",
           }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -260,13 +260,13 @@ export default function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-emerald-300 text-xs font-mono font-medium tracking-wide shadow-sm"
+                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-emerald-300 text-xs font-mono font-medium tracking-wide shadow-lg"
                 style={{
-                  background: "rgba(7, 29, 22, 0.75)",
+                  background: "rgba(15, 92, 69, 0.35)",
                   backdropFilter: "blur(16px)",
                   WebkitBackdropFilter: "blur(16px)",
-                  border: "1px solid rgba(15, 92, 69, 0.65)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.15)",
+                  border: "1px solid rgba(52, 211, 153, 0.45)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 10px 25px -5px rgba(0, 0, 0, 0.30)",
                 }}
               >
                 <span className="w-2 h-2 rounded-full bg-[#F28C28] animate-pulse" />
@@ -279,7 +279,7 @@ export default function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] drop-shadow-sm"
+                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] drop-shadow-md"
               >
                 Stop Planning Inventory.
                 <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-[#10b981]">
@@ -293,7 +293,7 @@ export default function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-xl drop-shadow-sm"
+                className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-xl drop-shadow"
               >
                 An intelligent EPC inventory and planning platform that transforms 44 months of operational data into smarter procurement, material transfers and assembly decisions.
               </motion.p>
@@ -319,11 +319,11 @@ export default function LandingPage() {
                   href="/dashboard"
                   className="flex items-center gap-2 px-6 py-3.5 rounded-lg text-slate-100 hover:text-white text-sm font-semibold transition-all duration-200 group"
                   style={{
-                    background: "rgba(12, 22, 38, 0.70)",
-                    backdropFilter: "blur(16px)",
-                    WebkitBackdropFilter: "blur(16px)",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
-                    boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18), 0 15px 35px -10px rgba(0, 0, 0, 0.40)",
+                    background: "rgba(15, 92, 69, 0.25)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255, 255, 255, 0.20)",
+                    boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 15px 35px -10px rgba(0, 0, 0, 0.40)",
                   }}
                 >
                   <span>Launch Control Room</span>
@@ -340,16 +340,16 @@ export default function LandingPage() {
             className="relative w-full overflow-hidden"
             style={{
               background:
-                "linear-gradient(90deg, rgba(12, 22, 38, 0.70) 0%, rgba(15, 92, 69, 0.28) 50%, rgba(12, 22, 38, 0.70) 100%)",
-              backdropFilter: "blur(18px)",
-              WebkitBackdropFilter: "blur(18px)",
-              borderTop: "1px solid rgba(255, 255, 255, 0.12)",
-              borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
-              boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
+                "linear-gradient(90deg, rgba(15, 92, 69, 0.25) 0%, rgba(10, 25, 22, 0.35) 50%, rgba(15, 92, 69, 0.25) 100%)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              borderTop: "1px solid rgba(255, 255, 255, 0.16)",
+              borderBottom: "1px solid rgba(255, 255, 255, 0.16)",
+              boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
             }}
           >
             {/* Top Reflection Line */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-slate-300">
@@ -410,7 +410,7 @@ export default function LandingPage() {
         {/* =========================================================================
             SECTION A — THE PROBLEM (Luxury Glassmorphic Challenge Panels)
             ========================================================================= */}
-        <section id="problem" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-[#071d16]/20 backdrop-blur-sm">
+        <section id="problem" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
             {/* Section Header */}
@@ -432,19 +432,19 @@ export default function LandingPage() {
               
               {/* Challenge 1 */}
               <div
-                className="group relative p-7 rounded-[20px] space-y-3.5 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between"
+                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-                <div className="w-10 h-10 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   <Warehouse className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -457,19 +457,19 @@ export default function LandingPage() {
 
               {/* Challenge 2 */}
               <div
-                className="group relative p-7 rounded-[20px] space-y-3.5 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between"
+                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-                <div className="w-10 h-10 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   <HardHat className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -482,19 +482,19 @@ export default function LandingPage() {
 
               {/* Challenge 3 */}
               <div
-                className="group relative p-7 rounded-[20px] space-y-3.5 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between"
+                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-                <div className="w-10 h-10 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   <Clock className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -507,19 +507,19 @@ export default function LandingPage() {
 
               {/* Challenge 4 */}
               <div
-                className="group relative p-7 rounded-[20px] space-y-3.5 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between"
+                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-                <div className="w-10 h-10 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   <Boxes className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -532,19 +532,19 @@ export default function LandingPage() {
 
               {/* Challenge 5 */}
               <div
-                className="group relative p-7 rounded-[20px] space-y-3.5 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between md:col-span-2 lg:col-span-2"
+                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between md:col-span-2 lg:col-span-2"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-                <div className="w-10 h-10 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   <Truck className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -562,7 +562,7 @@ export default function LandingPage() {
         {/* =========================================================================
             SECTION B — THE LUMINOFLOW PLATFORM (Four Core Pillars in Luxury Glass)
             ========================================================================= */}
-        <section id="platform" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-[#0c1220]/20 backdrop-blur-sm">
+        <section id="platform" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
             {/* Section Header */}
@@ -584,30 +584,32 @@ export default function LandingPage() {
               
               {/* 1. SEE IT */}
               <div
-                className="group relative p-8 rounded-[22px] space-y-6 transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(12, 22, 38, 0.52) 50%, rgba(7, 29, 22, 0.30) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.13)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.24) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.35) 75%, rgba(15, 92, 69, 0.18) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
                 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                    <div className="w-12 h-12 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                       <Layers className="w-6 h-6" />
                     </div>
                     <span
                       className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300"
                       style={{
-                        background: "rgba(7, 29, 22, 0.75)",
-                        border: "1px solid rgba(15, 92, 69, 0.60)",
-                        backdropFilter: "blur(10px)",
+                        background: "rgba(15, 92, 69, 0.35)",
+                        border: "1px solid rgba(52, 211, 153, 0.45)",
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)",
                       }}
                     >
                       01 / SEE IT
@@ -644,30 +646,32 @@ export default function LandingPage() {
 
               {/* 2. PLAN IT */}
               <div
-                className="group relative p-8 rounded-[22px] space-y-6 transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(12, 22, 38, 0.52) 50%, rgba(7, 29, 22, 0.30) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.13)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.24) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.35) 75%, rgba(15, 92, 69, 0.18) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                    <div className="w-12 h-12 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                       <GitBranch className="w-6 h-6" />
                     </div>
                     <span
                       className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300"
                       style={{
-                        background: "rgba(7, 29, 22, 0.75)",
-                        border: "1px solid rgba(15, 92, 69, 0.60)",
-                        backdropFilter: "blur(10px)",
+                        background: "rgba(15, 92, 69, 0.35)",
+                        border: "1px solid rgba(52, 211, 153, 0.45)",
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)",
                       }}
                     >
                       02 / PLAN IT
@@ -704,30 +708,32 @@ export default function LandingPage() {
 
               {/* 3. MATCH THE SETS */}
               <div
-                className="group relative p-8 rounded-[22px] space-y-6 transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(12, 22, 38, 0.52) 50%, rgba(7, 29, 22, 0.30) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.13)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.24) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.35) 75%, rgba(15, 92, 69, 0.18) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                    <div className="w-12 h-12 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                       <Boxes className="w-6 h-6" />
                     </div>
                     <span
                       className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300"
                       style={{
-                        background: "rgba(7, 29, 22, 0.75)",
-                        border: "1px solid rgba(15, 92, 69, 0.60)",
-                        backdropFilter: "blur(10px)",
+                        background: "rgba(15, 92, 69, 0.35)",
+                        border: "1px solid rgba(52, 211, 153, 0.45)",
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)",
                       }}
                     >
                       03 / MATCH THE SETS
@@ -764,30 +770,32 @@ export default function LandingPage() {
 
               {/* 4. AI COPILOT */}
               <div
-                className="group relative p-8 rounded-[22px] space-y-6 transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(12, 22, 38, 0.52) 50%, rgba(7, 29, 22, 0.30) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.13)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.24) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.35) 75%, rgba(15, 92, 69, 0.18) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#071d16]/90 border border-[#0F5C45]/70 flex items-center justify-center text-emerald-400 shadow-inner">
+                    <div className="w-12 h-12 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                       <Sparkles className="w-6 h-6 text-[#F28C28]" />
                     </div>
                     <span
                       className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300"
                       style={{
-                        background: "rgba(7, 29, 22, 0.75)",
-                        border: "1px solid rgba(15, 92, 69, 0.60)",
-                        backdropFilter: "blur(10px)",
+                        background: "rgba(15, 92, 69, 0.35)",
+                        border: "1px solid rgba(52, 211, 153, 0.45)",
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)",
                       }}
                     >
                       04 / AI COPILOT
@@ -829,7 +837,7 @@ export default function LandingPage() {
         {/* =========================================================================
             SECTION C — MEASURABLE INTELLIGENCE (Impact Metrics in Apple Glass)
             ========================================================================= */}
-        <section id="impact" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-[#071d16]/20 backdrop-blur-sm">
+        <section id="impact" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
             {/* Section Header */}
@@ -851,19 +859,19 @@ export default function LandingPage() {
               
               {/* Card 1: Idle Stock Reduction */}
               <div
-                className="group relative p-8 rounded-[20px] transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(12, 22, 38, 0.45) 50%, rgba(7, 29, 22, 0.30) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
                 {/* Top Subtle Edge Reflection */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
@@ -880,19 +888,19 @@ export default function LandingPage() {
 
               {/* Card 2: Site Service Level */}
               <div
-                className="group relative p-8 rounded-[20px] transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.18) 0%, rgba(12, 22, 38, 0.45) 50%, rgba(7, 29, 22, 0.25) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
                 {/* Top Subtle Edge Reflection */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
@@ -909,19 +917,19 @@ export default function LandingPage() {
 
               {/* Card 3: Causal Engine Benchmark */}
               <div
-                className="group relative p-8 rounded-[20px] transition-all duration-300 hover:-translate-y-[3px] flex flex-col justify-between overflow-hidden shadow-2xl"
+                className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.18) 0%, rgba(12, 22, 38, 0.45) 50%, rgba(7, 29, 22, 0.25) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.16)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
                 }}
               >
                 {/* Top Subtle Edge Reflection */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
@@ -940,17 +948,19 @@ export default function LandingPage() {
 
             {/* Thinner Benchmark Glass Notification Panel */}
             <div
-              className="relative py-3.5 px-5 rounded-xl text-xs font-mono text-slate-300 flex items-center gap-3 transition-colors duration-200 shadow-lg"
+              className="relative py-4 px-6 rounded-2xl text-xs font-mono text-slate-200 flex items-center gap-3.5 transition-colors duration-200 shadow-xl overflow-hidden"
               style={{
                 background:
-                  "linear-gradient(90deg, rgba(15, 92, 69, 0.28) 0%, rgba(7, 29, 22, 0.38) 50%, rgba(15, 92, 69, 0.20) 100%)",
-                backdropFilter: "blur(18px)",
-                WebkitBackdropFilter: "blur(18px)",
-                border: "1px solid rgba(15, 92, 69, 0.55)",
+                  "linear-gradient(90deg, rgba(15, 92, 69, 0.30) 0%, rgba(10, 25, 22, 0.35) 50%, rgba(15, 92, 69, 0.25) 100%)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: "1px solid rgba(52, 211, 153, 0.40)",
                 boxShadow:
-                  "inset 0 1px 1px 0 rgba(255, 255, 255, 0.12), 0 10px 25px -10px rgba(0, 0, 0, 0.35)",
+                  "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 15px 30px -10px rgba(0, 0, 0, 0.40)",
               }}
             >
+              {/* Top Subtle Edge Reflection */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent pointer-events-none" />
               <AlertCircle className="w-4 h-4 text-emerald-400 shrink-0" />
               <span className="leading-relaxed">
                 All benchmarks reflect retrospective causal replay across 44 months of Kanpur contractor move logs (Mar 2023 – Oct 2026). They evaluate algorithm trade-offs under zero future peeking rather than guaranteed real-world future savings.
@@ -963,7 +973,7 @@ export default function LandingPage() {
         {/* =========================================================================
             SECTION D — HOW IT WORKS (Visual Operational Workflow in Luxury Glass)
             ========================================================================= */}
-        <section id="how-it-works" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-[#0c1220]/20 backdrop-blur-sm">
+        <section id="how-it-works" className="relative w-full py-24 sm:py-32 border-b border-white/10 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
             {/* Section Header */}
@@ -985,19 +995,19 @@ export default function LandingPage() {
               
               {/* Step 1 */}
               <div
-                className="group relative p-6 rounded-[20px] space-y-4 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between"
+                className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.30) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
-                <div className="w-8 h-8 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/60 flex items-center justify-center font-mono font-bold text-xs text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-9 h-9 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 text-emerald-300 backdrop-blur-md flex items-center justify-center font-mono font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   01
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1010,19 +1020,19 @@ export default function LandingPage() {
 
               {/* Step 2 */}
               <div
-                className="group relative p-6 rounded-[20px] space-y-4 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between"
+                className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.30) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
-                <div className="w-8 h-8 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/60 flex items-center justify-center font-mono font-bold text-xs text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-9 h-9 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 text-emerald-300 backdrop-blur-md flex items-center justify-center font-mono font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   02
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1035,19 +1045,19 @@ export default function LandingPage() {
 
               {/* Step 3 */}
               <div
-                className="group relative p-6 rounded-[20px] space-y-4 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between"
+                className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.30) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
-                <div className="w-8 h-8 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/60 flex items-center justify-center font-mono font-bold text-xs text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-9 h-9 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 text-emerald-300 backdrop-blur-md flex items-center justify-center font-mono font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   03
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1060,19 +1070,19 @@ export default function LandingPage() {
 
               {/* Step 4 */}
               <div
-                className="group relative p-6 rounded-[20px] space-y-4 transition-all duration-300 hover:-translate-y-[3px] overflow-hidden shadow-2xl flex flex-col justify-between"
+                className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.20) 0%, rgba(12, 22, 38, 0.48) 50%, rgba(7, 29, 22, 0.28) 100%)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.30) 75%, rgba(15, 92, 69, 0.16) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
+                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
                 }}
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
-                <div className="w-8 h-8 rounded-lg bg-[#071d16]/90 border border-[#0F5C45]/60 flex items-center justify-center font-mono font-bold text-xs text-emerald-400 shadow-inner">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                <div className="w-9 h-9 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 text-emerald-300 backdrop-blur-md flex items-center justify-center font-mono font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                   04
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1123,11 +1133,11 @@ export default function LandingPage() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-8 py-4 rounded-xl text-slate-100 hover:text-white text-base font-semibold transition-all duration-200"
                 style={{
-                  background: "rgba(12, 22, 38, 0.70)",
-                  backdropFilter: "blur(18px)",
-                  WebkitBackdropFilter: "blur(18px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
+                  background: "rgba(15, 92, 69, 0.25)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255, 255, 255, 0.20)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
                 }}
               >
                 <span>Explore GitHub</span>
@@ -1140,11 +1150,11 @@ export default function LandingPage() {
               <span
                 className="px-3.5 py-1.5 rounded-lg text-slate-200"
                 style={{
-                  background: "rgba(12, 22, 38, 0.65)",
+                  background: "rgba(15, 92, 69, 0.25)",
                   backdropFilter: "blur(14px)",
                   WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.10)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.10)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
                 }}
               >
                 Next.js 16 (Turbopack)
@@ -1152,11 +1162,11 @@ export default function LandingPage() {
               <span
                 className="px-3.5 py-1.5 rounded-lg text-slate-200"
                 style={{
-                  background: "rgba(12, 22, 38, 0.65)",
+                  background: "rgba(15, 92, 69, 0.25)",
                   backdropFilter: "blur(14px)",
                   WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.10)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.10)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
                 }}
               >
                 React 19
@@ -1164,11 +1174,11 @@ export default function LandingPage() {
               <span
                 className="px-3.5 py-1.5 rounded-lg text-slate-200"
                 style={{
-                  background: "rgba(12, 22, 38, 0.65)",
+                  background: "rgba(15, 92, 69, 0.25)",
                   backdropFilter: "blur(14px)",
                   WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.10)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.10)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
                 }}
               >
                 TypeScript
@@ -1176,11 +1186,11 @@ export default function LandingPage() {
               <span
                 className="px-3.5 py-1.5 rounded-lg text-slate-200"
                 style={{
-                  background: "rgba(12, 22, 38, 0.65)",
+                  background: "rgba(15, 92, 69, 0.25)",
                   backdropFilter: "blur(14px)",
                   WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.10)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.10)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
                 }}
               >
                 Tailwind CSS
@@ -1188,11 +1198,11 @@ export default function LandingPage() {
               <span
                 className="px-3.5 py-1.5 rounded-lg text-slate-200"
                 style={{
-                  background: "rgba(12, 22, 38, 0.65)",
+                  background: "rgba(15, 92, 69, 0.25)",
                   backdropFilter: "blur(14px)",
                   WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.10)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.10)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
                 }}
               >
                 Causal Simulation Engine
@@ -1200,11 +1210,11 @@ export default function LandingPage() {
               <span
                 className="px-3.5 py-1.5 rounded-lg text-slate-200"
                 style={{
-                  background: "rgba(12, 22, 38, 0.65)",
+                  background: "rgba(15, 92, 69, 0.25)",
                   backdropFilter: "blur(14px)",
                   WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.10)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.10)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
                 }}
               >
                 Zero Database Overhead
@@ -1220,10 +1230,10 @@ export default function LandingPage() {
         <footer
           className="relative w-full py-10 text-xs font-mono text-slate-300"
           style={{
-            background: "rgba(8, 13, 23, 0.75)",
-            backdropFilter: "blur(18px)",
-            WebkitBackdropFilter: "blur(18px)",
-            borderTop: "1px solid rgba(255, 255, 255, 0.10)",
+            background: "rgba(7, 29, 22, 0.55)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            borderTop: "1px solid rgba(255, 255, 255, 0.12)",
           }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">

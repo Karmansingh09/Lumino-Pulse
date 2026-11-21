@@ -77,23 +77,23 @@ export default function DashboardShell({
             <div className="flex items-center gap-3">
               <Link
                 href="/"
-                className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-300 hover:text-white px-2.5 py-1.5 rounded-lg bg-[#131d2e] border border-[#1e293b] hover:border-slate-600 transition-colors shadow-sm"
+                className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-300 hover:text-white px-2.5 py-1.5 rounded-lg bg-[#131d2e] border border-[#1e293b] hover:border-emerald-600 transition-colors shadow-sm"
                 title="Return to Industrial Telemetry Landing Page"
               >
-                <ArrowLeft className="w-3.5 h-3.5 text-blue-400" />
+                <ArrowLeft className="w-3.5 h-3.5 text-emerald-400" />
                 <span className="hidden sm:inline">Landing</span>
               </Link>
               <div>
                 <div className="flex items-center gap-2.5">
                   <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
                   <h1 className="text-lg font-bold tracking-tight text-white flex items-center gap-2">
-                    <Link href="/" className="hover:text-blue-400 transition-colors">
+                    <Link href="/" className="hover:text-emerald-400 transition-colors">
                       LuminoFlow
                     </Link>
                     <span className="text-slate-500 font-normal">|</span>
                     <span className="text-slate-300 font-semibold text-sm">1,700 Poles EPC Planner</span>
                   </h1>
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#0F5C45]/20 text-emerald-300 border border-[#0F5C45]/50">
                     VCH3 Edition
                   </span>
                 </div>
@@ -115,7 +115,7 @@ export default function DashboardShell({
                 <div className="h-3 w-px bg-slate-700" />
                 <div>
                   <span className="text-[#94a3b8]">Service Level:</span>{" "}
-                  <span className="font-bold text-blue-400">
+                  <span className="font-bold text-white">
                     {meta.overall_scorecard.service_level_pct}%
                   </span>
                 </div>
@@ -123,17 +123,17 @@ export default function DashboardShell({
 
               <button
                 onClick={() => setIsScorecardOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-800/80 text-emerald-300 text-xs font-semibold transition-colors shadow-sm"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#131d2e] hover:bg-[#1c2a3f] border border-[#1e293b] hover:border-emerald-600/50 text-slate-200 hover:text-white text-xs font-semibold transition-colors shadow-sm"
               >
-                <Award className="w-3.5 h-3.5" />
+                <Award className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Project Scorecard</span>
               </button>
 
               <button
                 onClick={() => setIsAgentOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all shadow-md shadow-blue-900/30"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0F5C45] hover:bg-[#0c4b38] text-white text-xs font-bold transition-all shadow-md shadow-[#0F5C45]/30 border border-[#1b7d5e]"
               >
-                <Sparkles className="w-3.5 h-3.5 text-blue-200" />
+                <Sparkles className="w-3.5 h-3.5 text-emerald-200" />
                 <span>AI Copilot &amp; Vouchers</span>
               </button>
             </div>
@@ -145,7 +145,7 @@ export default function DashboardShell({
               onClick={() => setActiveTab("SEE_IT")}
               className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all ${
                 activeTab === "SEE_IT"
-                  ? "border-blue-500 text-blue-400 bg-blue-500/5"
+                  ? "border-[#0F5C45] text-white bg-[#0F5C45]/15"
                   : "border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-700"
               }`}
             >
@@ -157,7 +157,7 @@ export default function DashboardShell({
               onClick={() => setActiveTab("PLAN_IT")}
               className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all ${
                 activeTab === "PLAN_IT"
-                  ? "border-blue-500 text-blue-400 bg-blue-500/5"
+                  ? "border-[#0F5C45] text-white bg-[#0F5C45]/15"
                   : "border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-700"
               }`}
             >
@@ -169,7 +169,7 @@ export default function DashboardShell({
               onClick={() => setActiveTab("MATCH_SETS")}
               className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all ${
                 activeTab === "MATCH_SETS"
-                  ? "border-blue-500 text-blue-400 bg-blue-500/5"
+                  ? "border-[#0F5C45] text-white bg-[#0F5C45]/15"
                   : "border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-700"
               }`}
             >
@@ -186,7 +186,7 @@ export default function DashboardShell({
           {/* Dataset Scope */}
           <div className="flex items-center gap-2 text-slate-300">
             <span className="flex items-center gap-1.5 font-bold text-slate-200">
-              <Database className="w-3.5 h-3.5 text-blue-400" />
+              <Database className="w-3.5 h-3.5 text-emerald-400" />
               <span>Dataset Scope:</span>
             </span>
             <span className="font-mono text-slate-300">
@@ -199,7 +199,7 @@ export default function DashboardShell({
           <div className="flex flex-wrap items-center gap-2">
             {/* Unweighted Mean Idle Reduction */}
             <div
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-950/70 border border-emerald-800 text-emerald-200"
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0F5C45]/20 border border-[#0F5C45]/60 text-emerald-200"
               title="Unweighted arithmetic mean of idle reduction percentages across all 16 valid materials (Simulated Causal Plan vs. Actual Historical Stock)"
             >
               <span className="text-[10px] uppercase font-bold text-emerald-400">Avg Idle Reduction:</span>
@@ -211,12 +211,12 @@ export default function DashboardShell({
 
             {/* Unweighted Mean Service Level */}
             <div
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-950/70 border border-blue-800 text-blue-200"
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0F5C45]/15 border border-[#0F5C45]/40 text-emerald-200"
               title="Unweighted arithmetic mean of simulated site service level percentages across all 16 valid materials"
             >
-              <span className="text-[10px] uppercase font-bold text-blue-400">Site Service Level:</span>
-              <span className="font-mono font-extrabold text-blue-300 text-xs">{unweightedAvgServiceLevel}%</span>
-              <span className="text-[10px] text-blue-400/80 hidden lg:inline">
+              <span className="text-[10px] uppercase font-bold text-emerald-400">Site Service Level:</span>
+              <span className="font-mono font-extrabold text-white text-xs">{unweightedAvgServiceLevel}%</span>
+              <span className="text-[10px] text-emerald-400/80 hidden lg:inline">
                 (Unweighted Avg Across {validItemsCount} Items)
               </span>
             </div>
@@ -224,10 +224,10 @@ export default function DashboardShell({
             {/* Active Guardrails Pills */}
             <div className="flex items-center gap-1.5">
               <span
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-800 text-[11px] font-semibold"
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#F28C28]/15 text-[#F28C28] border border-[#F28C28]/40 text-[11px] font-semibold"
                 title="Auto-calibrated ratios for MNB010174 (G.I. Bolts in MT vs. Clamps) and MLU020008 (Ring Lugs)"
               >
-                <ShieldAlert className="w-3 h-3 text-amber-400" />
+                <ShieldAlert className="w-3 h-3 text-[#F28C28]" />
                 <span>2 BOQ Ratio Anomalies Auto-Calibrated</span>
               </span>
               <span

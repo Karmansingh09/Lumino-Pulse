@@ -185,13 +185,13 @@ export default function SeeItTab({
           {/* Item Selector */}
           <div className="flex-1 min-w-[280px] w-full">
             <label className="block text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-              <Package className="w-3.5 h-3.5 text-blue-400" />
+              <Package className="w-3.5 h-3.5 text-emerald-400" />
               Material Item (16 Tracked)
             </label>
             <select
               value={selectedItem}
               onChange={(e) => onSelectItem(e.target.value)}
-              className="w-full bg-[#1e293b] text-[#f8fafc] text-sm font-medium rounded-lg border border-[#334155] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-slate-500 transition-colors"
+              className="w-full bg-[#1e293b] text-[#f8fafc] text-sm font-medium rounded-lg border border-[#334155] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0F5C45] focus:border-[#0F5C45] hover:border-slate-500 transition-colors"
             >
               {items.map((it) => (
                 <option key={it.item_code} value={it.item_code}>
@@ -204,13 +204,13 @@ export default function SeeItTab({
           {/* Godown Selector */}
           <div className="min-w-[240px] w-full sm:w-auto">
             <label className="block text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-              <Warehouse className="w-3.5 h-3.5 text-amber-400" />
+              <Warehouse className="w-3.5 h-3.5 text-[#F28C28]" />
               Godown Store Scope
             </label>
             <select
               value={selectedGodown}
               onChange={(e) => onSelectGodown(e.target.value)}
-              className="w-full bg-[#1e293b] text-[#f8fafc] text-sm font-medium rounded-lg border border-[#334155] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-500 hover:border-slate-500 transition-colors"
+              className="w-full bg-[#1e293b] text-[#f8fafc] text-sm font-medium rounded-lg border border-[#334155] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0F5C45] focus:border-[#0F5C45] hover:border-slate-500 transition-colors"
             >
               <option value="ALL">All 6 Godowns (Project-Wide)</option>
               {godowns.map((g) => (
@@ -227,9 +227,9 @@ export default function SeeItTab({
           <span
             className={`px-2.5 py-1 text-xs font-semibold rounded-md border ${
               currentItemMeta.role === "Parent"
-                ? "bg-purple-950/60 border-purple-800 text-purple-300"
+                ? "bg-[#0F5C45]/20 border-[#0F5C45]/60 text-emerald-300"
                 : currentItemMeta.role === "Child"
-                ? "bg-blue-950/60 border-blue-800 text-blue-300"
+                ? "bg-[#0F5C45]/15 border-[#0F5C45]/40 text-emerald-200"
                 : "bg-slate-800/80 border-slate-700 text-slate-300"
             }`}
           >
@@ -238,7 +238,7 @@ export default function SeeItTab({
           <span className="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 border border-slate-700 text-slate-300">
             Unit: {currentItemMeta.unit}
           </span>
-          <span className="px-2.5 py-1 text-xs font-semibold rounded-md bg-amber-950/50 border border-amber-800 text-amber-300">
+          <span className="px-2.5 py-1 text-xs font-semibold rounded-md bg-[#F28C28]/15 border border-[#F28C28]/40 text-[#F28C28]">
             LT: {currentItemMeta.lead_time_days} Days
           </span>
         </div>
@@ -249,11 +249,11 @@ export default function SeeItTab({
         {/* Card 1: Vendor Receipts */}
         <div className="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b] relative overflow-hidden shadow">
           <div className="flex items-center justify-between text-[#94a3b8] mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
-              <Truck className="w-4 h-4 text-blue-400" />
+            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 text-slate-300">
+              <Truck className="w-4 h-4 text-emerald-400" />
               Total Vendor Receipts
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-blue-950/60 text-blue-300 border border-blue-800">
+            <span className="text-xs px-2 py-0.5 rounded bg-[#0F5C45]/20 text-emerald-300 border border-[#0F5C45]/50">
               {currentItemMeta.unit}
             </span>
           </div>
@@ -263,13 +263,13 @@ export default function SeeItTab({
           <div className="mt-2 text-xs text-[#94a3b8]">
             {isProjectWide ? "Total received across 6 godowns" : `Receipts at ${selectedGodown}`}
           </div>
-          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-blue-500/5 rounded-full pointer-events-none" />
+          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-[#0F5C45]/10 rounded-full pointer-events-none" />
         </div>
 
         {/* Card 2: Site Consumption */}
         <div className="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b] relative overflow-hidden shadow">
           <div className="flex items-center justify-between text-[#94a3b8] mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 text-slate-300">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               Total Site Consumption
             </span>
@@ -291,7 +291,7 @@ export default function SeeItTab({
               <div className="text-lg font-bold text-slate-400 tracking-tight flex items-center gap-1.5">
                 <span>Project-Wide Only</span>
               </div>
-              <div className="mt-2 text-xs text-amber-400/90 flex items-center gap-1">
+              <div className="mt-2 text-xs text-[#F28C28] flex items-center gap-1">
                 <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                 <span>Consumption has no godown column</span>
               </div>
@@ -301,17 +301,17 @@ export default function SeeItTab({
         </div>
 
         {/* Card 3: Peak Godown Idle Stock */}
-        <div className="bg-[#0f172a] p-4 rounded-xl border border-amber-950/60 bg-gradient-to-br from-[#0f172a] to-amber-950/10 relative overflow-hidden shadow">
+        <div className="bg-[#0f172a] p-4 rounded-xl border border-[#F28C28]/40 bg-gradient-to-br from-[#0f172a] to-[#F28C28]/10 relative overflow-hidden shadow">
           <div className="flex items-center justify-between text-[#94a3b8] mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
-              <Warehouse className="w-4 h-4 text-amber-400" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#F28C28] flex items-center gap-1.5">
+              <Warehouse className="w-4 h-4 text-[#F28C28]" />
               Peak Godown Idle Stock
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800">
+            <span className="text-xs px-2 py-0.5 rounded bg-[#F28C28]/20 text-[#F28C28] border border-[#F28C28]/40">
               {currentItemMeta.unit}
             </span>
           </div>
-          <div className="text-2xl font-bold text-amber-400 tracking-tight">
+          <div className="text-2xl font-bold text-[#F28C28] tracking-tight">
             {formatNumber(kpis.peakGodownIdle, isMT)}
           </div>
           <div className="mt-2 text-xs text-[#94a3b8] flex justify-between items-center">
@@ -320,28 +320,28 @@ export default function SeeItTab({
               {formatNumber(kpis.currentGodownIdle, isMT)} {currentItemMeta.unit}
             </span>
           </div>
-          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-amber-500/10 rounded-full pointer-events-none" />
+          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-[#F28C28]/10 rounded-full pointer-events-none" />
         </div>
 
         {/* Card 4: Lead Time & Contractor Idle */}
         <div className="bg-[#0f172a] p-4 rounded-xl border border-[#1e293b] relative overflow-hidden shadow">
           <div className="flex items-center justify-between text-[#94a3b8] mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-blue-400" />
+            <span className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 text-slate-300">
+              <Clock className="w-4 h-4 text-emerald-400" />
               Vendor Lead Time
             </span>
             <span className="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
               ~{currentItemMeta.lead_time_months} Months
             </span>
           </div>
-          <div className="text-2xl font-bold text-blue-400 tracking-tight">
+          <div className="text-2xl font-bold text-white tracking-tight">
             {currentItemMeta.lead_time_days} <span className="text-base font-normal text-slate-400">Days</span>
           </div>
           <div className="mt-2 text-xs text-[#94a3b8]">
             {isProjectWide ? (
               <div className="flex justify-between items-center">
                 <span>Peak Contractor Idle:</span>
-                <span className="font-semibold text-blue-300">
+                <span className="font-semibold text-slate-200">
                   {formatNumber(kpis.peakContractorIdle, isMT)} {currentItemMeta.unit}
                 </span>
               </div>
@@ -349,7 +349,7 @@ export default function SeeItTab({
               <span className="text-slate-400">Contractor idle tracked project-wide</span>
             )}
           </div>
-          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-blue-500/5 rounded-full pointer-events-none" />
+          <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-slate-500/5 rounded-full pointer-events-none" />
         </div>
       </div>
 
@@ -589,7 +589,7 @@ export default function SeeItTab({
                   onClick={() => setYearFilter(y)}
                   className={`px-2.5 py-1 text-xs font-semibold rounded transition-colors ${
                     yearFilter === y
-                      ? "bg-blue-600 text-white shadow-sm"
+                      ? "bg-[#0F5C45] text-white shadow-sm hover:bg-[#0c4b38]"
                       : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
@@ -618,7 +618,7 @@ export default function SeeItTab({
                 <th scope="col" className="px-4 py-3 font-semibold">
                   Month
                 </th>
-                <th scope="col" className="px-3 py-3 text-right font-semibold text-blue-300">
+                <th scope="col" className="px-3 py-3 text-right font-semibold text-slate-200">
                   Receipts
                 </th>
                 <th scope="col" className="px-3 py-3 text-right font-semibold">
@@ -627,7 +627,7 @@ export default function SeeItTab({
                 <th scope="col" className="px-3 py-3 text-right font-semibold">
                   Trf OUT
                 </th>
-                <th scope="col" className="px-3 py-3 text-right font-semibold text-amber-300">
+                <th scope="col" className="px-3 py-3 text-right font-semibold text-slate-300">
                   Issued
                 </th>
                 <th scope="col" className="px-3 py-3 text-right font-semibold">
@@ -641,13 +641,13 @@ export default function SeeItTab({
                 >
                   Consumed {isProjectWide ? "" : "(Proj)"}
                 </th>
-                <th scope="col" className="px-4 py-3 text-right font-bold text-amber-400 bg-amber-950/20">
+                <th scope="col" className="px-4 py-3 text-right font-bold text-[#F28C28] bg-[#F28C28]/15">
                   Godown Stock
                 </th>
                 <th
                   scope="col"
                   className={`px-4 py-3 text-right font-bold ${
-                    isProjectWide ? "text-blue-400 bg-blue-950/20" : "text-slate-500 bg-slate-900/50"
+                    isProjectWide ? "text-emerald-300 bg-[#0F5C45]/15" : "text-slate-500 bg-slate-900/50"
                   }`}
                 >
                   Contractor Idle
@@ -667,7 +667,7 @@ export default function SeeItTab({
                     <td className="px-4 py-2.5 font-medium text-slate-200 whitespace-nowrap">
                       {row.month}
                     </td>
-                    <td className="px-3 py-2.5 text-right font-mono text-blue-300">
+                    <td className="px-3 py-2.5 text-right font-mono text-slate-200">
                       {row.receipts > 0 ? formatNumber(row.receipts, isMT) : "—"}
                     </td>
                     <td className="px-3 py-2.5 text-right font-mono text-slate-300">
@@ -676,7 +676,7 @@ export default function SeeItTab({
                     <td className="px-3 py-2.5 text-right font-mono text-slate-300">
                       {row.transfers_out > 0 ? formatNumber(row.transfers_out, isMT) : "—"}
                     </td>
-                    <td className="px-3 py-2.5 text-right font-mono text-amber-300">
+                    <td className="px-3 py-2.5 text-right font-mono text-slate-300">
                       {row.issued > 0 ? formatNumber(row.issued, isMT) : "—"}
                     </td>
                     <td className="px-3 py-2.5 text-right font-mono text-slate-300">
@@ -697,12 +697,12 @@ export default function SeeItTab({
                           : "—"
                         : "—"}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-mono font-bold text-amber-400 bg-amber-950/10">
+                    <td className="px-4 py-2.5 text-right font-mono font-bold text-[#F28C28] bg-[#F28C28]/5">
                       <div className="flex items-center justify-end gap-1">
                         {hasRawNegative && (
                           <span
                             title={`Raw un-clamped balance was ${row.raw_godown_stock} (clamped to 0 due to late ERP entry)`}
-                            className="text-[10px] text-amber-500 cursor-help"
+                            className="text-[10px] text-[#F28C28] cursor-help"
                           >
                             ⚠️
                           </span>
@@ -713,7 +713,7 @@ export default function SeeItTab({
                     <td
                       className={`px-4 py-2.5 text-right font-mono font-bold ${
                         isProjectWide
-                          ? "text-blue-400 bg-blue-950/10"
+                          ? "text-emerald-300 bg-[#0F5C45]/5"
                           : "text-slate-600 italic bg-slate-900/30"
                       }`}
                     >

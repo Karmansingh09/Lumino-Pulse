@@ -227,11 +227,11 @@ export default function MatchSetsTab({ setsData, months }: MatchSetsTabProps) {
                     onClick={() => setSelectedParentCode(pCode)}
                     className={`px-3 py-2 text-xs font-bold rounded-lg border transition-all text-left ${
                       isActive
-                        ? "bg-blue-600 border-blue-500 text-white shadow-md shadow-blue-900/30"
+                        ? "bg-[#0F5C45] border-[#1b7d5e] text-white shadow-md shadow-[#0F5C45]/30"
                         : "bg-[#1e293b] border-[#334155] text-slate-300 hover:text-white hover:border-slate-500"
                     }`}
                   >
-                    <div className="font-mono text-[10px] text-blue-200">Set {s.set_no} · {pCode}</div>
+                    <div className="font-mono text-[10px] text-emerald-200">Set {s.set_no} · {pCode}</div>
                     <div className="truncate max-w-[200px]">{s.parent_name}</div>
                   </button>
                 );
@@ -250,7 +250,7 @@ export default function MatchSetsTab({ setsData, months }: MatchSetsTabProps) {
                 onClick={() => setRatioMode("calibrated")}
                 className={`px-3 py-2 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 ${
                   ratioMode === "calibrated"
-                    ? "bg-emerald-600 text-white shadow"
+                    ? "bg-[#0F5C45] text-white shadow-md shadow-[#0F5C45]/20"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -262,7 +262,7 @@ export default function MatchSetsTab({ setsData, months }: MatchSetsTabProps) {
                 onClick={() => setRatioMode("raw")}
                 className={`px-3 py-2 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 ${
                   ratioMode === "raw"
-                    ? "bg-amber-600 text-white shadow"
+                    ? "bg-[#F28C28] text-white shadow-md shadow-[#F28C28]/20"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -350,7 +350,7 @@ export default function MatchSetsTab({ setsData, months }: MatchSetsTabProps) {
             if (blockedCnt >= 3) {
               bgClass = "bg-red-500/35 text-red-300 border-red-800/50 hover:bg-red-500/45";
             } else if (blockedCnt >= 1) {
-              bgClass = "bg-amber-500/25 text-amber-300 border-amber-800/40 hover:bg-amber-500/35";
+              bgClass = "bg-[#F28C28]/25 text-[#F28C28] border-[#F28C28]/40 hover:bg-[#F28C28]/35";
             }
 
             return (
@@ -359,7 +359,7 @@ export default function MatchSetsTab({ setsData, months }: MatchSetsTabProps) {
                 onClick={() => setSelectedMonthIdx(idx)}
                 title={`${m}: ${blockedCnt} blocked godowns ${isWorst ? "(Worst bottleneck month)" : ""}`}
                 className={`py-2 px-1 text-[10px] font-mono rounded border transition-all text-center relative ${bgClass} ${
-                  isSelected ? "ring-2 ring-blue-400 font-bold scale-105 z-10 shadow-lg shadow-blue-500/20" : ""
+                  isSelected ? "ring-2 ring-[#0F5C45] font-bold scale-105 z-10 shadow-lg shadow-[#0F5C45]/30" : ""
                 }`}
               >
                 <div className="truncate">{m.substring(2)}</div>
@@ -379,14 +379,14 @@ export default function MatchSetsTab({ setsData, months }: MatchSetsTabProps) {
             0 Blocked (Healthy)
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded bg-amber-500/40 border border-amber-800 inline-block" />
+            <span className="w-2.5 h-2.5 rounded bg-[#F28C28]/30 border border-[#F28C28]/60 inline-block" />
             1–2 Blocked
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded bg-red-500/50 border border-red-800 inline-block" />
             3+ Blocked (Severe Stranding)
           </span>
-          <span className="ml-auto font-mono text-blue-400 font-semibold">
+          <span className="ml-auto font-mono text-white font-semibold">
             Active: {months[selectedMonthIdx]}
           </span>
         </div>
@@ -396,7 +396,7 @@ export default function MatchSetsTab({ setsData, months }: MatchSetsTabProps) {
       <div>
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-sm font-bold text-white flex items-center gap-2">
-            <Warehouse className="w-4 h-4 text-amber-400" />
+            <Warehouse className="w-4 h-4 text-[#F28C28]" />
             6-District Godown Assembly Balance Status ({months[selectedMonthIdx]})
           </h3>
           <span className="text-xs text-[#94a3b8]">
