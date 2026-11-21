@@ -26,6 +26,8 @@ import {
   ArrowRightLeft,
   Calendar,
   CheckCircle2,
+  Download,
+  FileSpreadsheet,
 } from "lucide-react";
 import { ItemMeta, LedgerData, ProjectMonthlyRow, GodownMonthlyRow } from "@/types";
 
@@ -121,6 +123,50 @@ export default function SeeItTab({
   };
 
   const isMT = currentItemMeta?.unit === "MT";
+
+  const exportLedgerToCSV = () => {
+    if (!monthlyRows || monthlyRows.length === 0) return;
+    const headers = [
+      "Month",
+      "ItemCode",
+      "ItemName",
+      "Scope",
+      "Unit",
+      "Receipts",
+      "TransfersIn",
+      "TransfersOut",
+      "Issued",
+      "Returned",
+      "SiteConsumed",
+      "GodownStock",
+      "ContractorIdleStock",
+    ];
+    const rows = monthlyRows.map((r) => [
+      r.month,
+      currentItemMeta.item_code,
+      `"${currentItemMeta.item_name.replace(/"/g, '""')}"`,
+      isProjectWide ? "ALL_6_GODOWNS" : selectedGodown,
+      currentItemMeta.unit,
+      r.receipts,
+      r.transfers_in,
+      r.transfers_out,
+      r.issued,
+      r.returned,
+      isProjectWide ? (r as ProjectMonthlyRow).consumed : "",
+      r.godown_stock,
+      isProjectWide ? (r as ProjectMonthlyRow).contractor_idle : "",
+    ]);
+    const csvContent = [headers.join(","), ...rows.map((row) => row.join(","))].join("\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `Lumino_Ledger_${currentItemMeta.item_code}_${isProjectWide ? "PROJECT_WIDE" : selectedGodown}_${yearFilter}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
 
   if (!currentLedger) {
     return (
@@ -328,7 +374,7 @@ export default function SeeItTab({
             </div>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] min-h-[280px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={monthlyRows} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                 <defs>
@@ -427,7 +473,7 @@ export default function SeeItTab({
             </div>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] min-h-[280px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <ComposedChart data={monthlyRows} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
@@ -534,21 +580,33 @@ export default function SeeItTab({
             </p>
           </div>
 
-          {/* Year Filter Buttons */}
-          <div className="flex items-center gap-1 bg-[#1e293b] p-1 rounded-lg border border-[#334155]">
-            {["ALL", "2023", "2024", "2025", "2026"].map((y) => (
-              <button
-                key={y}
-                onClick={() => setYearFilter(y)}
-                className={`px-2.5 py-1 text-xs font-semibold rounded transition-colors ${
-                  yearFilter === y
-                    ? "bg-blue-600 text-white shadow-sm"
-                    : "text-slate-400 hover:text-slate-200"
-                }`}
-              >
-                {y}
-              </button>
-            ))}
+          <div className="flex items-center gap-2">
+            {/* Year Filter Buttons */}
+            <div className="flex items-center gap-1 bg-[#1e293b] p-1 rounded-lg border border-[#334155]">
+              {["ALL", "2023", "2024", "2025", "2026"].map((y) => (
+                <button
+                  key={y}
+                  onClick={() => setYearFilter(y)}
+                  className={`px-2.5 py-1 text-xs font-semibold rounded transition-colors ${
+                    yearFilter === y
+                      ? "bg-blue-600 text-white shadow-sm"
+                      : "text-slate-400 hover:text-slate-200"
+                  }`}
+                >
+                  {y}
+                </button>
+              ))}
+            </div>
+
+            {/* Export CSV Button */}
+            <button
+              onClick={exportLedgerToCSV}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors shadow-sm"
+              title="Export filtered monthly physical inventory ledger to CSV"
+            >
+              <Download className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Export CSV</span>
+            </button>
           </div>
         </div>
 

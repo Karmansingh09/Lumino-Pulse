@@ -27,12 +27,12 @@ export default function MatchSetsTab({ setsData, months }: MatchSetsTabProps) {
   // Available parent set codes
   const parentCodes = useMemo(() => Object.keys(setsData), [setsData]);
 
-  // State
+  // State: default to genuine worst bottleneck month index 21 (2024-12) for MRP070060 (93,432 stranded units, 6/6 godowns blocked)
   const [selectedParentCode, setSelectedParentCode] = useState<string>(
     parentCodes[0] || "MRP070060"
   );
   const [ratioMode, setRatioMode] = useState<"calibrated" | "raw">("calibrated");
-  const [selectedMonthIdx, setSelectedMonthIdx] = useState<number>(14); // Default: around month 14 (peak activity)
+  const [selectedMonthIdx, setSelectedMonthIdx] = useState<number>(21);
   const [isAnomalyBannerOpen, setIsAnomalyBannerOpen] = useState<boolean>(true);
 
   // Active parent set data

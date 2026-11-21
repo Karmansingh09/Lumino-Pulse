@@ -18,6 +18,8 @@ import {
   ChevronDown,
   ChevronUp,
   RefreshCw,
+  Download,
+  FileSpreadsheet,
 } from "lucide-react";
 import { AgentResponse, ToolCallRecord, ERPVoucher } from "@/lib/agentEngine";
 
@@ -106,6 +108,47 @@ export default function LuminoAgentPanel({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
+  };
+
+  const exportVoucherToSAPB1 = (voucher: ERPVoucher) => {
+    const headers = [
+      "DocType",
+      "DocNum",
+      "DocDate",
+      "ItemCode",
+      "ItemDescription",
+      "Quantity",
+      "UnitMsr",
+      "FromWarehouse",
+      "ToWarehouse",
+      "Comments",
+      "ApprovalStatus",
+      "CreatedAt",
+    ];
+    const row = [
+      voucher.voucher_type === "PURCHASE_ORDER" ? "PurchaseOrder" : "StockTransfer",
+      voucher.voucher_id,
+      voucher.month,
+      voucher.item_code,
+      `"${voucher.item_name.replace(/"/g, '""')}"`,
+      voucher.qty,
+      voucher.unit,
+      voucher.from_godown || "CENTRAL_SUPPLIER",
+      voucher.to_godown,
+      `"${voucher.reason.replace(/"/g, '""')}"`,
+      voucher.status,
+      voucher.created_at,
+    ];
+    const csvContent = [headers.join(","), row.join(",")].join("\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `SAP_B1_${voucher.voucher_id}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -269,17 +312,28 @@ export default function LuminoAgentPanel({
                       </span>
                     </div>
 
-                    <span
-                      className={`px-2 py-0.5 text-[10px] font-bold rounded border ${
-                        activeVoucher.status === "APPROVED"
-                          ? "bg-emerald-950 text-emerald-300 border-emerald-800"
-                          : activeVoucher.status === "REJECTED"
-                          ? "bg-red-950 text-red-300 border-red-800"
-                          : "bg-amber-950 text-amber-300 border-amber-700"
-                      }`}
-                    >
-                      {activeVoucher.status.replace(/_/g, " ")}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => exportVoucherToSAPB1(activeVoucher)}
+                        className="px-2 py-0.5 text-[10px] font-semibold rounded bg-[#1e293b] hover:bg-slate-700 text-slate-200 border border-slate-600 flex items-center gap-1 transition-colors"
+                        title="Download SAP Business One DTW CSV File"
+                      >
+                        <Download className="w-3 h-3 text-emerald-400" />
+                        <span>SAP B1 CSV</span>
+                      </button>
+
+                      <span
+                        className={`px-2 py-0.5 text-[10px] font-bold rounded border ${
+                          activeVoucher.status === "APPROVED"
+                            ? "bg-emerald-950 text-emerald-300 border-emerald-800"
+                            : activeVoucher.status === "REJECTED"
+                            ? "bg-red-950 text-red-300 border-red-800"
+                            : "bg-amber-950 text-amber-300 border-amber-700"
+                        }`}
+                      >
+                        {activeVoucher.status.replace(/_/g, " ")}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Voucher Body Grid */}

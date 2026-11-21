@@ -61,8 +61,8 @@ export default function PlanItTab({
     leadTimeSlippageDays: 0,
   });
 
-  // Time-Travel Replay State
-  const [timeIndex, setTimeIndex] = useState<number>(12); // Default to month 12 (approx 1 year in)
+  // Time-Travel Replay State: default to index 16 (2024-07) where an active simulated ORDER of 15,805 PCS is visible
+  const [timeIndex, setTimeIndex] = useState<number>(16);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [showAllItemsTable, setShowAllItemsTable] = useState<boolean>(false);
 
@@ -426,7 +426,7 @@ export default function PlanItTab({
           </div>
         </div>
 
-        <div className="h-[320px] w-full">
+        <div className="h-[320px] min-h-[320px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <ComposedChart data={simResult.months} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />

@@ -1,18 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import {
   Layers,
   Calendar,
   Package,
   TrendingDown,
   ShieldCheck,
+  ShieldAlert,
+  FileSpreadsheet,
   Award,
   ChevronRight,
   ExternalLink,
   Sparkles,
   GitBranch,
   Boxes,
+  Database,
 } from "lucide-react";
 import { MetaData, LedgerData, SetsData } from "@/types";
 import SeeItTab from "@/components/SeeItTab";
@@ -35,6 +38,22 @@ export default function DashboardShell({ meta, ledger, setsData }: DashboardShel
   const [selectedGodown, setSelectedGodown] = useState<string>("ALL");
   const [isScorecardOpen, setIsScorecardOpen] = useState<boolean>(false);
   const [isAgentOpen, setIsAgentOpen] = useState<boolean>(false);
+
+  // Compute unweighted arithmetic means across all 16 items per Production Guardrail A
+  const { unweightedAvgIdleReduction, unweightedAvgServiceLevel, validItemsCount } = useMemo(() => {
+    const items = meta.overall_scorecard?.items_scorecard || [];
+    const count = items.length;
+    if (count === 0) {
+      return { unweightedAvgIdleReduction: "0.0", unweightedAvgServiceLevel: "0.0", validItemsCount: 0 };
+    }
+    const idleMean = (items.reduce((acc, it) => acc + (it.reduction_pct || 0), 0) / count).toFixed(1);
+    const serviceMean = (items.reduce((acc, it) => acc + (it.service_level || 0), 0) / count).toFixed(1);
+    return {
+      unweightedAvgIdleReduction: idleMean,
+      unweightedAvgServiceLevel: serviceMean,
+      validItemsCount: count,
+    };
+  }, [meta.overall_scorecard]);
 
   return (
     <div className="min-h-screen bg-[#0b0f19] text-[#f8fafc] flex flex-col">
@@ -136,6 +155,68 @@ export default function DashboardShell({ meta, ledger, setsData }: DashboardShel
           </div>
         </div>
       </header>
+
+      {/* Milestone 6: Executive Project Summary Strip (Visible across all tabs) */}
+      <div className="bg-[#0e1626] border-b border-[#1e293b] px-4 sm:px-6 lg:px-8 py-2.5 shadow-inner">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
+          {/* Dataset Scope */}
+          <div className="flex items-center gap-2 text-slate-300">
+            <span className="flex items-center gap-1.5 font-bold text-slate-200">
+              <Database className="w-3.5 h-3.5 text-blue-400" />
+              <span>Dataset Scope:</span>
+            </span>
+            <span className="font-mono text-slate-300">
+              <strong className="text-white">231,076</strong> contractor moves · <strong className="text-white">2,600</strong> receipts · <strong className="text-white">1,446</strong> transfers · <strong className="text-white">44</strong> months
+            </span>
+            <span className="text-slate-500 hidden xl:inline">(6 Kanpur Region Godowns)</span>
+          </div>
+
+          {/* Metric Badges & Active Guardrails */}
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Unweighted Mean Idle Reduction */}
+            <div
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-950/70 border border-emerald-800 text-emerald-200"
+              title="Unweighted arithmetic mean of idle reduction percentages across all 16 valid materials (Simulated Causal Plan vs. Actual Historical Stock)"
+            >
+              <span className="text-[10px] uppercase font-bold text-emerald-400">Avg Idle Reduction:</span>
+              <span className="font-mono font-extrabold text-emerald-300 text-xs">+{unweightedAvgIdleReduction}%</span>
+              <span className="text-[10px] text-emerald-400/80 hidden lg:inline">
+                (Unweighted Avg Across {validItemsCount} Items)
+              </span>
+            </div>
+
+            {/* Unweighted Mean Service Level */}
+            <div
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-950/70 border border-blue-800 text-blue-200"
+              title="Unweighted arithmetic mean of simulated site service level percentages across all 16 valid materials"
+            >
+              <span className="text-[10px] uppercase font-bold text-blue-400">Site Service Level:</span>
+              <span className="font-mono font-extrabold text-blue-300 text-xs">{unweightedAvgServiceLevel}%</span>
+              <span className="text-[10px] text-blue-400/80 hidden lg:inline">
+                (Unweighted Avg Across {validItemsCount} Items)
+              </span>
+            </div>
+
+            {/* Active Guardrails Pills */}
+            <div className="flex items-center gap-1.5">
+              <span
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-800 text-[11px] font-semibold"
+                title="Auto-calibrated ratios for MNB010174 (G.I. Bolts in MT vs. Clamps) and MLU020008 (Ring Lugs)"
+              >
+                <ShieldAlert className="w-3 h-3 text-amber-400" />
+                <span>2 BOQ Ratio Anomalies Auto-Calibrated</span>
+              </span>
+              <span
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-800/90 text-slate-300 border border-slate-700 text-[11px] font-semibold"
+                title="Generates standard CSV files for SAP Business One Data Transfer Workbench (DTW)"
+              >
+                <FileSpreadsheet className="w-3 h-3 text-slate-400" />
+                <span>SAP B1 CSV Export Ready</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Main Body View */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
