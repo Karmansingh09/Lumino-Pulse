@@ -1,0 +1,9 @@
+set_no,parent_code,parent_name,parent_unit,child_code,child_name,child_unit,ratio_of_parent
+1.071,MRP070060,POLE CLAMP RDSS,SET,MNB010007,HOT DIP GALVANIZED HEX BOLTS & NUTS WITH WASHER,KG,1.0
+1.071,MRP070060,POLE CLAMP RDSS,SET,MNB010128,HOT DIP GALVANIZED BOLTS AND NUTS,KG,1.0
+1.071,MRP070060,POLE CLAMP RDSS,SET,MNB010174,G.I. NUTS & BOLTS (M16X65 MM) WITH WASHER,MT,1.0
+1.071,MRP070060,POLE CLAMP RDSS,SET,MEH050071,EYE HOOK,NOS,1.0
+1.077,MRP070064,Single phase (SMC) Pole top distribution box with clamps (40x3 mm)nut & bolts,NOS,MNB010174,G.I. NUTS & BOLTS (M16X65 MM) WITH WASHER,MT,0.75
+1.077,MRP070064,Single phase (SMC) Pole top distribution box with clamps (40x3 mm)nut & bolts,NOS,MLU020013,25 SQMM ALUMINIUM LUGS,NOS,0.25
+1.078,MRP070065,Three phase Glass Fiber Reinforced (SMC) Pole top distribution box with clamps (40x3 mm)nut & bolts,NOS,MNB010174,G.I. NUTS & BOLTS (M16X65 MM) WITH WASHER,MT,0.75
+1.078,MRP070065,Three phase Glass Fiber Reinforced (SMC) Pole top distribution box with clamps (40x3 mm)nut & bolts,NOS,MLU020008,25 SQMM ALUMINIUM LUGS RING TYPE,NOS,0.25
