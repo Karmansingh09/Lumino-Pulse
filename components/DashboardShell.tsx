@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Link from "next/link";
 import {
   Layers,
   Calendar,
@@ -16,6 +17,7 @@ import {
   GitBranch,
   Boxes,
   Database,
+  ArrowLeft,
 } from "lucide-react";
 import { MetaData, LedgerData, SetsData } from "@/types";
 import SeeItTab from "@/components/SeeItTab";
@@ -28,16 +30,26 @@ interface DashboardShellProps {
   meta: MetaData;
   ledger: LedgerData;
   setsData: SetsData;
+  initialTab?: TabType;
+  initialAgentOpen?: boolean;
+  initialItem?: string;
 }
 
 type TabType = "SEE_IT" | "PLAN_IT" | "MATCH_SETS";
 
-export default function DashboardShell({ meta, ledger, setsData }: DashboardShellProps) {
-  const [activeTab, setActiveTab] = useState<TabType>("SEE_IT");
-  const [selectedItem, setSelectedItem] = useState<string>("MPO010014"); // Default: PCC Pole 8.5 MTR 180 KG
+export default function DashboardShell({
+  meta,
+  ledger,
+  setsData,
+  initialTab = "SEE_IT",
+  initialAgentOpen = false,
+  initialItem = "MPO010014",
+}: DashboardShellProps) {
+  const [activeTab, setActiveTab] = useState<TabType>(initialTab);
+  const [selectedItem, setSelectedItem] = useState<string>(initialItem);
   const [selectedGodown, setSelectedGodown] = useState<string>("ALL");
   const [isScorecardOpen, setIsScorecardOpen] = useState<boolean>(false);
-  const [isAgentOpen, setIsAgentOpen] = useState<boolean>(false);
+  const [isAgentOpen, setIsAgentOpen] = useState<boolean>(initialAgentOpen);
 
   // Compute unweighted arithmetic means across all 16 items per Production Guardrail A
   const { unweightedAvgIdleReduction, unweightedAvgServiceLevel, validItemsCount } = useMemo(() => {
@@ -62,21 +74,33 @@ export default function DashboardShell({ meta, ledger, setsData }: DashboardShel
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between py-3 gap-3">
             {/* Title & Scope */}
-            <div>
-              <div className="flex items-center gap-2.5">
-                <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                <h1 className="text-lg font-bold tracking-tight text-white flex items-center gap-2">
-                  <span>LuminoFlow</span>
-                  <span className="text-slate-500 font-normal">|</span>
-                  <span className="text-slate-300 font-semibold text-sm">1,700 Poles EPC Planner</span>
-                </h1>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">
-                  VCH3 Edition
-                </span>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/"
+                className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-300 hover:text-white px-2.5 py-1.5 rounded-lg bg-[#131d2e] border border-[#1e293b] hover:border-slate-600 transition-colors shadow-sm"
+                title="Return to Industrial Telemetry Landing Page"
+              >
+                <ArrowLeft className="w-3.5 h-3.5 text-blue-400" />
+                <span className="hidden sm:inline">Landing</span>
+              </Link>
+              <div>
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <h1 className="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                    <Link href="/" className="hover:text-blue-400 transition-colors">
+                      LuminoFlow
+                    </Link>
+                    <span className="text-slate-500 font-normal">|</span>
+                    <span className="text-slate-300 font-semibold text-sm">1,700 Poles EPC Planner</span>
+                  </h1>
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">
+                    VCH3 Edition
+                  </span>
+                </div>
+                <p className="text-xs text-[#94a3b8] mt-0.5">
+                  Kanpur 6-District Power Line Project · Mar 2023 – Oct 2026 · 16 Items · 6 Active Godowns
+                </p>
               </div>
-              <p className="text-xs text-[#94a3b8] mt-0.5">
-                Kanpur 6-District Power Line Project · Mar 2023 – Oct 2026 · 16 Items · 6 Active Godowns
-              </p>
             </div>
 
             {/* Quick Metrics & Scorecard Toggle */}
