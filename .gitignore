@@ -37,3 +37,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
+
+# Confidential company source data
+data/csv/*.csv
