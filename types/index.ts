@@ -140,3 +140,53 @@ export interface ItemLedger {
 }
 
 export type LedgerData = Record<string, ItemLedger>;
+
+// Job 3 Sets Types
+export interface ChildBreakdown {
+  child_code: string;
+  child_name: string;
+  child_unit: string;
+  child_stock: number;
+  ratio: number;
+  needed_for_all_parent: number;
+  shortfall_surplus: number;
+  max_sets_possible: number;
+}
+
+export interface GodownSetBalance {
+  godown: string;
+  parent_stock: number;
+  buildable_sets: number;
+  stranded_parent_stock: number;
+  is_balanced: boolean;
+  limiting_child_code: string | null;
+  limiting_child_name: string | null;
+  children_breakdown: ChildBreakdown[];
+}
+
+export interface SetMonthModeData {
+  godowns: GodownSetBalance[];
+  total_parent_stock: number;
+  total_buildable_sets: number;
+  total_stranded_parent: number;
+  imbalanced_godown_count: number;
+}
+
+export interface SetMonthRecord {
+  month: string;
+  calibrated: SetMonthModeData;
+  raw: SetMonthModeData;
+}
+
+export interface ParentSetRecord {
+  set_no: string;
+  parent_code: string;
+  parent_name: string;
+  parent_unit: string;
+  children: SetChildMeta[];
+  timeline_calibrated: number[];
+  timeline_raw: number[];
+  monthly_records: SetMonthRecord[];
+}
+
+export type SetsData = Record<string, ParentSetRecord>;

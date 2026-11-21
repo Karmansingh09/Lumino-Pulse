@@ -14,19 +14,21 @@ import {
   GitBranch,
   Boxes,
 } from "lucide-react";
-import { MetaData, LedgerData } from "@/types";
+import { MetaData, LedgerData, SetsData } from "@/types";
 import SeeItTab from "@/components/SeeItTab";
 import PlanItTab from "@/components/PlanItTab";
+import MatchSetsTab from "@/components/MatchSetsTab";
 import ProjectScorecard from "@/components/ProjectScorecard";
 
 interface DashboardShellProps {
   meta: MetaData;
   ledger: LedgerData;
+  setsData: SetsData;
 }
 
 type TabType = "SEE_IT" | "PLAN_IT" | "MATCH_SETS";
 
-export default function DashboardShell({ meta, ledger }: DashboardShellProps) {
+export default function DashboardShell({ meta, ledger, setsData }: DashboardShellProps) {
   const [activeTab, setActiveTab] = useState<TabType>("SEE_IT");
   const [selectedItem, setSelectedItem] = useState<string>("MPO010014"); // Default: PCC Pole 8.5 MTR 180 KG
   const [selectedGodown, setSelectedGodown] = useState<string>("ALL");
@@ -120,9 +122,6 @@ export default function DashboardShell({ meta, ledger }: DashboardShellProps) {
             >
               <Boxes className="w-4 h-4" />
               <span>3. MATCH THE SETS (Assembly Bottlenecks)</span>
-              <span className="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 border border-slate-700">
-                Milestone 4
-              </span>
             </button>
           </div>
         </div>
@@ -154,22 +153,10 @@ export default function DashboardShell({ meta, ledger }: DashboardShellProps) {
         )}
 
         {activeTab === "MATCH_SETS" && (
-          <div className="bg-[#0f172a] border border-[#1e293b] rounded-2xl p-8 text-center max-w-2xl mx-auto my-12 shadow-xl">
-            <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mx-auto mb-4">
-              <Boxes className="w-6 h-6" />
-            </div>
-            <h2 className="text-lg font-bold text-white mb-2">
-              Tab 3: MATCH THE SETS — Assembly Bottleneck Detector
-            </h2>
-            <p className="text-xs text-[#94a3b8] leading-relaxed mb-6">
-              Milestone 4 will implement the 3 Parent Set detectors, the 6-godown bottleneck grid, limiting child
-              component breakdown, and the Calibrated Site Ratio vs. Raw BOQ Ratio toggle with the MT/Lug warning banner.
-            </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-800 text-purple-300 text-xs font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-              <span>Dataset pre-computed in public/data/sets.json (Ready for Milestone 4)</span>
-            </div>
-          </div>
+          <MatchSetsTab
+            setsData={setsData}
+            months={meta.months}
+          />
         )}
       </main>
 
