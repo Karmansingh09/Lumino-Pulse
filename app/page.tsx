@@ -14,14 +14,9 @@ import {
   Warehouse,
   Truck,
   HardHat,
-  Cpu,
   ChevronRight,
-  Database,
   CheckCircle2,
   AlertTriangle,
-  ArrowRightLeft,
-  Clock,
-  ExternalLink,
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -36,7 +31,6 @@ export default function LandingPage() {
 
   // Check prefers-reduced-motion and screen size on mount
   useEffect(() => {
-    // Check reduced motion preference
     if (typeof window !== "undefined") {
       const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
       setPrefersReducedMotion(motionQuery.matches);
@@ -49,7 +43,6 @@ export default function LandingPage() {
       };
       motionQuery.addEventListener("change", motionHandler);
 
-      // Check mobile viewport for video optimization
       const checkMobile = () => {
         setIsMobile(window.innerWidth < 768);
       };
@@ -65,23 +58,23 @@ export default function LandingPage() {
 
   // Motion animation variants respecting reduced motion
   const fadeUp: Variants = {
-    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 18 },
+    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 16 },
     visible: (custom: number = 0) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: prefersReducedMotion ? 0.01 : 0.55,
-        delay: prefersReducedMotion ? 0 : custom * 0.1,
+        duration: prefersReducedMotion ? 0.01 : 0.5,
+        delay: prefersReducedMotion ? 0 : custom * 0.08,
         ease: "easeOut",
       },
     }),
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-[#f8fafc] flex flex-col selection:bg-[#0F5C45]/40 selection:text-white relative overflow-hidden">
+    <div className="min-h-screen bg-[#0b0f19] text-[#f8fafc] flex flex-col selection:bg-[#0F5C45]/40 selection:text-white relative overflow-x-hidden">
       
-      {/* 1. TOP TELEMETRY NAVIGATION (Above Video) */}
-      <header className="relative z-30 border-b border-[#1e293b]/80 bg-[#0c1220]/90 backdrop-blur-md">
+      {/* 1. TOP TELEMETRY NAVIGATION (Header appears exactly once) */}
+      <header className="relative z-30 w-full border-b border-[#1e293b]/70 bg-[#0c1220]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           
           {/* Brand Logo & Operational Status */}
@@ -90,13 +83,11 @@ export default function LandingPage() {
               <div className="w-8 h-8 rounded-lg bg-[#0F5C45] border border-[#16785c] flex items-center justify-center text-white shadow-sm shadow-[#0F5C45]/30 group-hover:bg-[#0c4b38] transition-colors">
                 <Activity className="w-4 h-4 text-emerald-200" />
               </div>
-              <div>
-                <span className="font-bold text-base tracking-tight text-white flex items-center gap-1.5">
-                  LuminoFlow
-                  <span className="text-slate-500 font-normal">|</span>
-                  <span className="text-xs text-slate-300 font-mono font-medium">EPC Planner</span>
-                </span>
-              </div>
+              <span className="font-bold text-base tracking-tight text-white flex items-center gap-1.5">
+                LuminoFlow
+                <span className="text-slate-500 font-normal">|</span>
+                <span className="text-xs text-slate-300 font-mono font-medium">EPC Planner</span>
+              </span>
             </Link>
 
             <div className="h-4 w-px bg-slate-800 hidden sm:block" />
@@ -130,65 +121,42 @@ export default function LandingPage() {
       </header>
 
       {/* 2. FULL-WIDTH CINEMATIC HERO SECTION WITH EMERALD BACKGROUND VIDEO */}
-      <section className="relative w-full overflow-hidden border-b border-[#1e293b]/70 min-h-[660px] lg:min-h-[720px] flex flex-col justify-center">
+      <section className="relative z-10 w-full overflow-hidden border-b border-[#1e293b]/70 min-h-[620px] lg:min-h-[680px] flex items-center">
         
-        {/* Layer A: Static Emerald-Themed Fallback Background (Always rendered behind video) */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: `radial-gradient(circle at 50% 25%, #0F5C45 0%, #071d16 45%, #0b0f19 90%)`,
-          }}
-        />
+        {/* Layer A: Full-Width Background Video + Visible Subtle Gradient Overlay */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-[#071d16] pointer-events-none">
+          {!prefersReducedMotion && !videoError && (
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload={isMobile ? "metadata" : "auto"}
+              onError={() => setVideoError(true)}
+              className="w-full h-full object-cover object-center opacity-75"
+              style={{
+                filter: "brightness(0.95) contrast(1.05)",
+              }}
+            >
+              <source src="/videos/lumino-hero.mp4" type="video/mp4" />
+            </video>
+          )}
 
-        {/* Layer B: Full-Width Cinematic Background Video */}
-        {!prefersReducedMotion && !videoError && (
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload={isMobile ? "metadata" : "auto"}
-            onError={() => setVideoError(true)}
-            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none transition-opacity duration-1000 opacity-45"
+          {/* Subtle Dark Emerald Gradient Overlay (Preserves video visibility while keeping text crisp) */}
+          <div
+            className="absolute inset-0 pointer-events-none"
             style={{
-              filter: "brightness(0.9) contrast(1.1)",
+              background: `linear-gradient(180deg, rgba(11, 15, 25, 0.40) 0%, rgba(7, 29, 22, 0.45) 35%, rgba(11, 15, 25, 0.75) 80%, #0b0f19 100%)`,
             }}
-          >
-            <source src="/videos/lumino-hero.mp4" type="video/mp4" />
-          </video>
-        )}
+          />
+        </div>
 
-        {/* Layer C: Subtle Dark Emerald Gradient Overlay (Preserves 100% Text Readability) */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: `linear-gradient(180deg, rgba(7, 29, 22, 0.82) 0%, rgba(10, 26, 20, 0.85) 45%, rgba(11, 15, 25, 0.97) 95%, #0b0f19 100%)`,
-          }}
-        />
-
-        {/* Layer D: Radial Vignette Overlay for Crisp Typography Contrast */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-60"
-          style={{
-            background: `radial-gradient(circle at 50% 35%, transparent 20%, rgba(7, 24, 18, 0.75) 75%, #0b0f19 100%)`,
-          }}
-        />
-
-        {/* Layer E: Fine Blueprint Grid Overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-25"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #0F5C45 1px, transparent 0)`,
-            backgroundSize: "32px 32px",
-          }}
-        />
-
-        {/* Hero Interactive Content (Z-Index 10: Positioned securely above video & overlays) */}
+        {/* Layer B: Hero Interactive Content Container (Clean Two-Column Grid) */}
         <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left Column: Mission Narrative, Typography & CTAs */}
+            {/* Left Column: Headline, Description, CTAs, Operational Metrics */}
             <div className="lg:col-span-6 space-y-6">
               
               {/* Eyebrow Badge with Tangerine Accent */}
@@ -197,7 +165,7 @@ export default function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F28C28]/10 border border-[#F28C28]/40 text-[#F28C28] text-xs font-mono font-semibold tracking-wide"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F28C28]/10 border border-[#F28C28]/40 text-[#F28C28] text-xs font-mono font-semibold tracking-wide w-fit"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#F28C28]" />
                 <span>LUMINO INDUSTRIES · 1,700 POLES CHALLENGE</span>
@@ -209,7 +177,7 @@ export default function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.18]"
+                className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white tracking-tight leading-[1.15] break-words"
               >
                 Stop ordering on fixed plans.{" "}
                 <span className="text-white block mt-1">
@@ -238,7 +206,7 @@ export default function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                className="flex flex-wrap items-center gap-3 pt-2"
+                className="flex flex-wrap items-center gap-3 pt-1"
               >
                 <Link
                   href="/dashboard"
@@ -263,7 +231,7 @@ export default function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                className="pt-4 grid grid-cols-3 gap-3 border-t border-[#1e293b]/90"
+                className="pt-4 grid grid-cols-3 gap-3 border-t border-slate-700/60 max-w-lg"
               >
                 <div className="p-2.5 rounded-lg bg-[#0f172a]/95 border border-[#1e293b] backdrop-blur-sm">
                   <span className="block text-[10px] uppercase font-mono text-slate-400">Idle Cut</span>
@@ -285,15 +253,15 @@ export default function LandingPage() {
               </motion.div>
             </div>
 
-            {/* Right Column: Interactive Animated SVG Telemetry Schematic */}
+            {/* Right Column: Existing Interactive Supply-Chain Telemetry Visualization */}
             <motion.div
               custom={2}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="lg:col-span-6"
+              className="lg:col-span-6 w-full"
             >
-              <div className="bg-[#0f172a]/95 rounded-xl border border-[#1e293b] p-5 shadow-2xl space-y-4 backdrop-blur-md">
+              <div className="bg-[#0f172a]/95 rounded-xl border border-[#1e293b] p-5 shadow-2xl space-y-4 backdrop-blur-md w-full">
                 
                 {/* Schematic Header & Interactive Mode Toggle */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#1e293b]">
@@ -330,7 +298,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Animated SVG Schematic */}
-                <div className="relative bg-[#090d16] p-4 rounded-lg border border-[#1e293b]/80 overflow-hidden">
+                <div className="relative bg-[#090d16] p-4 rounded-lg border border-[#1e293b]/80 overflow-hidden w-full">
                   <svg
                     viewBox="0 0 540 200"
                     className="w-full h-auto select-none"
@@ -526,7 +494,7 @@ export default function LandingPage() {
       </section>
 
       {/* 3. INTERACTIVE 3-MODULE BENTO GRID (Main Page Content) */}
-      <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-14 sm:space-y-18">
+      <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-14 sm:space-y-18 bg-[#0b0f19]">
         
         <section className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#1e293b] pb-4">
@@ -725,7 +693,7 @@ export default function LandingPage() {
 
       </main>
 
-      {/* 5. ENGINEERING TRUST STRIP (FOOTER) */}
+      {/* 5. ENGINEERING TRUST STRIP (Footer appears exactly once) */}
       <footer className="relative z-20 border-t border-[#1e293b] bg-[#0c1220] py-4 text-xs font-mono text-slate-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <div className="flex items-center gap-2">
