@@ -19,6 +19,7 @@ import SeeItTab from "@/components/SeeItTab";
 import PlanItTab from "@/components/PlanItTab";
 import MatchSetsTab from "@/components/MatchSetsTab";
 import ProjectScorecard from "@/components/ProjectScorecard";
+import LuminoAgentPanel from "@/components/LuminoAgentPanel";
 
 interface DashboardShellProps {
   meta: MetaData;
@@ -33,6 +34,7 @@ export default function DashboardShell({ meta, ledger, setsData }: DashboardShel
   const [selectedItem, setSelectedItem] = useState<string>("MPO010014"); // Default: PCC Pole 8.5 MTR 180 KG
   const [selectedGodown, setSelectedGodown] = useState<string>("ALL");
   const [isScorecardOpen, setIsScorecardOpen] = useState<boolean>(false);
+  const [isAgentOpen, setIsAgentOpen] = useState<boolean>(false);
 
   return (
     <div className="min-h-screen bg-[#0b0f19] text-[#f8fafc] flex flex-col">
@@ -82,6 +84,14 @@ export default function DashboardShell({ meta, ledger, setsData }: DashboardShel
               >
                 <Award className="w-3.5 h-3.5" />
                 <span>Project Scorecard</span>
+              </button>
+
+              <button
+                onClick={() => setIsAgentOpen(true)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all shadow-md shadow-blue-900/30"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-blue-200" />
+                <span>AI Copilot &amp; Vouchers</span>
               </button>
             </div>
           </div>
@@ -149,6 +159,7 @@ export default function DashboardShell({ meta, ledger, setsData }: DashboardShel
             godowns={meta.godowns}
             ledgerData={ledger}
             meta={meta}
+            onOpenAgent={() => setIsAgentOpen(true)}
           />
         )}
 
@@ -165,6 +176,14 @@ export default function DashboardShell({ meta, ledger, setsData }: DashboardShel
         meta={meta}
         isOpen={isScorecardOpen}
         onClose={() => setIsScorecardOpen(false)}
+      />
+
+      {/* Lumino Supply-Chain Agent Drawer */}
+      <LuminoAgentPanel
+        isOpen={isAgentOpen}
+        onClose={() => setIsAgentOpen(false)}
+        activeItem={selectedItem}
+        activeMonth="2024-06"
       />
 
       {/* Industrial Footer */}

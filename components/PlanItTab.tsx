@@ -42,6 +42,7 @@ interface PlanItTabProps {
   godowns: string[];
   ledgerData: LedgerData;
   meta: MetaData;
+  onOpenAgent?: () => void;
 }
 
 export default function PlanItTab({
@@ -51,6 +52,7 @@ export default function PlanItTab({
   godowns,
   ledgerData,
   meta,
+  onOpenAgent,
 }: PlanItTabProps) {
   // Live Simulator Parameters
   const [params, setParams] = useState<SimulatorParams>({
@@ -611,6 +613,15 @@ export default function PlanItTab({
                     +{simResult.summary.effectiveLeadMonths} months ({simResult.summary.effectiveLeadDays}d)
                   </span>
                 </div>
+                {onOpenAgent && (
+                  <button
+                    onClick={onOpenAgent}
+                    className="w-full mt-3 py-1.5 px-2.5 rounded-lg bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/40 text-blue-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+                    <span>AI Action Brief &amp; Draft PO</span>
+                  </button>
+                )}
               </div>
             </div>
 
