@@ -260,14 +260,7 @@ export default function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-emerald-300 text-xs font-mono font-medium tracking-wide shadow-lg"
-                style={{
-                  background: "rgba(15, 92, 69, 0.35)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                  border: "1px solid rgba(52, 211, 153, 0.45)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 10px 25px -5px rgba(0, 0, 0, 0.30)",
-                }}
+                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-emerald-300 text-xs font-mono font-medium tracking-wide shadow-lg glass-pill"
               >
                 <span className="w-2 h-2 rounded-full bg-[#F28C28] animate-pulse" />
                 <span>LUMINO INDUSTRIES · 1,700 POLES EPC CHALLENGE</span>
@@ -317,14 +310,7 @@ export default function LandingPage() {
                 {/* Secondary CTA Glass Panel Button */}
                 <Link
                   href="/dashboard"
-                  className="flex items-center gap-2 px-6 py-3.5 rounded-lg text-slate-100 hover:text-white text-sm font-semibold transition-all duration-200 group"
-                  style={{
-                    background: "rgba(15, 92, 69, 0.25)",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    border: "1px solid rgba(255, 255, 255, 0.20)",
-                    boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 15px 35px -10px rgba(0, 0, 0, 0.40)",
-                  }}
+                  className="flex items-center gap-2 px-6 py-3.5 rounded-lg text-slate-100 hover:text-white text-sm font-semibold transition-all duration-200 group glass-panel"
                 >
                   <span>Launch Control Room</span>
                   <ArrowUpRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -336,26 +322,15 @@ export default function LandingPage() {
           {/* -----------------------------------------------------------------------
               HERO BOTTOM COMPACT DATA STRIP (Apple-Style Luxury Glass Bar)
               ----------------------------------------------------------------------- */}
-          <div
-            className="relative w-full overflow-hidden"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(15, 92, 69, 0.25) 0%, rgba(10, 25, 22, 0.35) 50%, rgba(15, 92, 69, 0.25) 100%)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              borderTop: "1px solid rgba(255, 255, 255, 0.16)",
-              borderBottom: "1px solid rgba(255, 255, 255, 0.16)",
-              boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
-            }}
-          >
+          <div className="relative w-full overflow-hidden glass-bar">
             {/* Top Reflection Line */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-slate-300">
                 
                 <div className="flex items-center gap-3">
-                  <span className="w-1.5 h-8 rounded-full bg-[#0F5C45]" />
+                  <span className="w-1.5 h-8 rounded-full bg-[#0F5C45] shadow-[0_0_12px_#0F5C45]" />
                   <div>
                     <span className="block text-lg sm:text-xl font-bold font-mono text-white tracking-tight drop-shadow-sm">
                       231,076
@@ -367,7 +342,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="w-1.5 h-8 rounded-full bg-emerald-500" />
+                  <span className="w-1.5 h-8 rounded-full bg-emerald-400 shadow-[0_0_12px_#10B981]" />
                   <div>
                     <span className="block text-lg sm:text-xl font-bold font-mono text-white tracking-tight drop-shadow-sm">
                       2,600
@@ -379,7 +354,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="w-1.5 h-8 rounded-full bg-[#F28C28]" />
+                  <span className="w-1.5 h-8 rounded-full bg-[#F28C28] shadow-[0_0_12px_#F28C28]" />
                   <div>
                     <span className="block text-lg sm:text-xl font-bold font-mono text-white tracking-tight drop-shadow-sm">
                       1,446
@@ -391,7 +366,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="w-1.5 h-8 rounded-full bg-slate-400" />
+                  <span className="w-1.5 h-8 rounded-full bg-slate-300 shadow-[0_0_12px_rgba(255,255,255,0.4)]" />
                   <div>
                     <span className="block text-lg sm:text-xl font-bold font-mono text-white tracking-tight drop-shadow-sm">
                       44
@@ -431,20 +406,9 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               
               {/* Challenge 1 */}
-              <div
-                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                   <Warehouse className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -456,20 +420,9 @@ export default function LandingPage() {
               </div>
 
               {/* Challenge 2 */}
-              <div
-                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                   <HardHat className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -481,20 +434,9 @@ export default function LandingPage() {
               </div>
 
               {/* Challenge 3 */}
-              <div
-                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                   <Clock className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -506,20 +448,9 @@ export default function LandingPage() {
               </div>
 
               {/* Challenge 4 */}
-              <div
-                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                   <Boxes className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -531,20 +462,9 @@ export default function LandingPage() {
               </div>
 
               {/* Challenge 5 */}
-              <div
-                className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between md:col-span-2 lg:col-span-2"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-11 h-11 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-7 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between md:col-span-2 lg:col-span-2 glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                   <Truck className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -583,35 +503,15 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               
               {/* 1. SEE IT */}
-              <div
-                className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.24) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.35) 75%, rgba(15, 92, 69, 0.18) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.16)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+              <div className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden shadow-2xl glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
                 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                    <div className="w-12 h-12 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                       <Layers className="w-6 h-6" />
                     </div>
-                    <span
-                      className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300"
-                      style={{
-                        background: "rgba(15, 92, 69, 0.35)",
-                        border: "1px solid rgba(52, 211, 153, 0.45)",
-                        backdropFilter: "blur(12px)",
-                        WebkitBackdropFilter: "blur(12px)",
-                        boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)",
-                      }}
-                    >
+                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300 glass-pill">
                       01 / SEE IT
                     </span>
                   </div>
@@ -645,35 +545,15 @@ export default function LandingPage() {
               </div>
 
               {/* 2. PLAN IT */}
-              <div
-                className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.24) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.35) 75%, rgba(15, 92, 69, 0.18) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.16)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+              <div className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden shadow-2xl glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                    <div className="w-12 h-12 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                       <GitBranch className="w-6 h-6" />
                     </div>
-                    <span
-                      className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300"
-                      style={{
-                        background: "rgba(15, 92, 69, 0.35)",
-                        border: "1px solid rgba(52, 211, 153, 0.45)",
-                        backdropFilter: "blur(12px)",
-                        WebkitBackdropFilter: "blur(12px)",
-                        boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)",
-                      }}
-                    >
+                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300 glass-pill">
                       02 / PLAN IT
                     </span>
                   </div>
@@ -707,35 +587,15 @@ export default function LandingPage() {
               </div>
 
               {/* 3. MATCH THE SETS */}
-              <div
-                className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.24) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.35) 75%, rgba(15, 92, 69, 0.18) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.16)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+              <div className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden shadow-2xl glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                    <div className="w-12 h-12 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                       <Boxes className="w-6 h-6" />
                     </div>
-                    <span
-                      className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300"
-                      style={{
-                        background: "rgba(15, 92, 69, 0.35)",
-                        border: "1px solid rgba(52, 211, 153, 0.45)",
-                        backdropFilter: "blur(12px)",
-                        WebkitBackdropFilter: "blur(12px)",
-                        boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)",
-                      }}
-                    >
+                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300 glass-pill">
                       03 / MATCH THE SETS
                     </span>
                   </div>
@@ -769,35 +629,15 @@ export default function LandingPage() {
               </div>
 
               {/* 4. AI COPILOT */}
-              <div
-                className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.24) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.35) 75%, rgba(15, 92, 69, 0.18) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.16)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 25px 50px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+              <div className="group relative p-8 rounded-[24px] space-y-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden shadow-2xl glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 backdrop-blur-md flex items-center justify-center text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                    <div className="w-12 h-12 rounded-xl glass-icon flex items-center justify-center text-emerald-300">
                       <Sparkles className="w-6 h-6 text-[#F28C28]" />
                     </div>
-                    <span
-                      className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300"
-                      style={{
-                        background: "rgba(15, 92, 69, 0.35)",
-                        border: "1px solid rgba(52, 211, 153, 0.45)",
-                        backdropFilter: "blur(12px)",
-                        WebkitBackdropFilter: "blur(12px)",
-                        boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20)",
-                      }}
-                    >
+                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded text-emerald-300 glass-pill">
                       04 / AI COPILOT
                     </span>
                   </div>
@@ -858,20 +698,8 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
               {/* Card 1: Idle Stock Reduction */}
-              <div
-                className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.16)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                {/* Top Subtle Edge Reflection */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+              <div className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden shadow-2xl glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
@@ -887,20 +715,8 @@ export default function LandingPage() {
               </div>
 
               {/* Card 2: Site Service Level */}
-              <div
-                className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.16)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                {/* Top Subtle Edge Reflection */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+              <div className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden shadow-2xl glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
@@ -916,20 +732,8 @@ export default function LandingPage() {
               </div>
 
               {/* Card 3: Causal Engine Benchmark */}
-              <div
-                className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.05) 25%, rgba(10, 25, 22, 0.32) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.16)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 24px 0 rgba(15, 92, 69, 0.12), 0 20px 40px -15px rgba(0, 0, 0, 0.50)",
-                }}
-              >
-                {/* Top Subtle Edge Reflection */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+              <div className="group relative p-8 rounded-[22px] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden shadow-2xl glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
 
                 <div className="space-y-4">
                   <span className="text-xs uppercase font-mono tracking-wider text-slate-300 block font-medium">
@@ -947,20 +751,8 @@ export default function LandingPage() {
             </div>
 
             {/* Thinner Benchmark Glass Notification Panel */}
-            <div
-              className="relative py-4 px-6 rounded-2xl text-xs font-mono text-slate-200 flex items-center gap-3.5 transition-colors duration-200 shadow-xl overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(15, 92, 69, 0.30) 0%, rgba(10, 25, 22, 0.35) 50%, rgba(15, 92, 69, 0.25) 100%)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
-                border: "1px solid rgba(52, 211, 153, 0.40)",
-                boxShadow:
-                  "inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), 0 15px 30px -10px rgba(0, 0, 0, 0.40)",
-              }}
-            >
-              {/* Top Subtle Edge Reflection */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent pointer-events-none" />
+            <div className="relative py-4 px-6 rounded-2xl text-xs font-mono text-slate-200 flex items-center gap-3.5 transition-colors duration-200 shadow-xl overflow-hidden glass-notification">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
               <AlertCircle className="w-4 h-4 text-emerald-400 shrink-0" />
               <span className="leading-relaxed">
                 All benchmarks reflect retrospective causal replay across 44 months of Kanpur contractor move logs (Mar 2023 – Oct 2026). They evaluate algorithm trade-offs under zero future peeking rather than guaranteed real-world future savings.
@@ -994,20 +786,9 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               
               {/* Step 1 */}
-              <div
-                className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.30) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-9 h-9 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 text-emerald-300 backdrop-blur-md flex items-center justify-center font-mono font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-9 h-9 rounded-xl glass-icon text-emerald-300 flex items-center justify-center font-mono font-bold text-xs">
                   01
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1019,20 +800,9 @@ export default function LandingPage() {
               </div>
 
               {/* Step 2 */}
-              <div
-                className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.30) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-9 h-9 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 text-emerald-300 backdrop-blur-md flex items-center justify-center font-mono font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-9 h-9 rounded-xl glass-icon text-emerald-300 flex items-center justify-center font-mono font-bold text-xs">
                   02
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1044,20 +814,9 @@ export default function LandingPage() {
               </div>
 
               {/* Step 3 */}
-              <div
-                className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.30) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-9 h-9 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 text-emerald-300 backdrop-blur-md flex items-center justify-center font-mono font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-9 h-9 rounded-xl glass-icon text-emerald-300 flex items-center justify-center font-mono font-bold text-xs">
                   03
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1069,20 +828,9 @@ export default function LandingPage() {
               </div>
 
               {/* Step 4 */}
-              <div
-                className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(15, 92, 69, 0.22) 0%, rgba(255, 255, 255, 0.04) 25%, rgba(10, 25, 22, 0.30) 75%, rgba(15, 92, 69, 0.16) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow:
-                    "inset 0 1px 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 20px 0 rgba(15, 92, 69, 0.10), 0 20px 40px -15px rgba(0, 0, 0, 0.45)",
-                }}
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                <div className="w-9 h-9 rounded-xl bg-[#0F5C45]/30 border border-emerald-400/40 text-emerald-300 backdrop-blur-md flex items-center justify-center font-mono font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+              <div className="group relative p-6 rounded-[22px] space-y-4 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col justify-between glass-panel">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                <div className="w-9 h-9 rounded-xl glass-icon text-emerald-300 flex items-center justify-center font-mono font-bold text-xs">
                   04
                 </div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1131,14 +879,7 @@ export default function LandingPage() {
                 href="https://github.com/Karmansingh09/Lumino-Pulse"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-8 py-4 rounded-xl text-slate-100 hover:text-white text-base font-semibold transition-all duration-200"
-                style={{
-                  background: "rgba(15, 92, 69, 0.25)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1px solid rgba(255, 255, 255, 0.20)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 20px 40px -15px rgba(0, 0, 0, 0.40)",
-                }}
+                className="flex items-center gap-2 px-8 py-4 rounded-xl text-slate-100 hover:text-white text-base font-semibold transition-all duration-200 glass-panel"
               >
                 <span>Explore GitHub</span>
                 <ExternalLink className="w-4 h-4 text-slate-300" />
@@ -1147,76 +888,22 @@ export default function LandingPage() {
 
             {/* Technology Specifications Strip in Glass Badges */}
             <div className="pt-8 flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-300">
-              <span
-                className="px-3.5 py-1.5 rounded-lg text-slate-200"
-                style={{
-                  background: "rgba(15, 92, 69, 0.25)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
-                }}
-              >
+              <span className="px-3.5 py-1.5 rounded-lg text-slate-200 glass-pill">
                 Next.js 16 (Turbopack)
               </span>
-              <span
-                className="px-3.5 py-1.5 rounded-lg text-slate-200"
-                style={{
-                  background: "rgba(15, 92, 69, 0.25)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
-                }}
-              >
+              <span className="px-3.5 py-1.5 rounded-lg text-slate-200 glass-pill">
                 React 19
               </span>
-              <span
-                className="px-3.5 py-1.5 rounded-lg text-slate-200"
-                style={{
-                  background: "rgba(15, 92, 69, 0.25)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
-                }}
-              >
+              <span className="px-3.5 py-1.5 rounded-lg text-slate-200 glass-pill">
                 TypeScript
               </span>
-              <span
-                className="px-3.5 py-1.5 rounded-lg text-slate-200"
-                style={{
-                  background: "rgba(15, 92, 69, 0.25)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
-                }}
-              >
+              <span className="px-3.5 py-1.5 rounded-lg text-slate-200 glass-pill">
                 Tailwind CSS
               </span>
-              <span
-                className="px-3.5 py-1.5 rounded-lg text-slate-200"
-                style={{
-                  background: "rgba(15, 92, 69, 0.25)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
-                }}
-              >
+              <span className="px-3.5 py-1.5 rounded-lg text-slate-200 glass-pill">
                 Causal Simulation Engine
               </span>
-              <span
-                className="px-3.5 py-1.5 rounded-lg text-slate-200"
-                style={{
-                  background: "rgba(15, 92, 69, 0.25)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.18)",
-                }}
-              >
+              <span className="px-3.5 py-1.5 rounded-lg text-slate-200 glass-pill">
                 Zero Database Overhead
               </span>
             </div>
