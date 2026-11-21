@@ -107,38 +107,35 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* 2. INDUSTRIAL HERO SECTION */}
-      <section className="relative z-10 w-full overflow-hidden border-b border-[#1e293b]/70 min-h-[620px] lg:min-h-[680px] flex items-center bg-[#0b0f19]">
+      {/* 2. FULL-WIDTH CINEMATIC HERO SECTION WITH EMERALD BACKGROUND VIDEO */}
+      <section className="relative z-10 w-full overflow-hidden border-b border-[#1e293b]/70 min-h-[620px] lg:min-h-[680px] flex items-center bg-[#071d16]">
         
-        {/* Engineering Blueprint Grid & Deep Emerald Ambient Glow */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          {/* Subtle 40px industrial telemetry coordinate grid */}
-          <div
-            className="absolute inset-0 opacity-20"
+        {/* Layer A: Full-Width Background Video + Subtle Dark Emerald Overlay */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover object-center opacity-85"
             style={{
-              backgroundImage: `linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)`,
-              backgroundSize: "40px 40px",
+              filter: "brightness(0.95) contrast(1.05)",
             }}
-          />
+          >
+            <source src="/videos/lumino-hero.mp4" type="video/mp4" />
+          </video>
 
-          {/* Deep Emerald Ambient Radial Glow */}
+          {/* Subtle Dark Emerald Overlay (Preserves video visibility while keeping text crisp) */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 pointer-events-none"
             style={{
-              background: `radial-gradient(circle at 50% 25%, rgba(15, 92, 69, 0.22) 0%, rgba(7, 29, 22, 0.12) 45%, transparent 75%)`,
-            }}
-          />
-
-          {/* Bottom fade into main body */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(180deg, transparent 65%, #0b0f19 100%)`,
+              background: `linear-gradient(180deg, rgba(11, 15, 25, 0.40) 0%, rgba(15, 92, 69, 0.30) 40%, rgba(11, 15, 25, 0.70) 85%, #0b0f19 100%)`,
             }}
           />
         </div>
 
-        {/* Hero Interactive Content Container (Clean Two-Column Grid) */}
+        {/* Layer B: Hero Interactive Content Container (Clean Two-Column Grid) */}
         <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
