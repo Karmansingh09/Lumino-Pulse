@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import {
@@ -23,13 +23,10 @@ export default function LandingPage() {
   // Interactive Simulation Mode in Hero: "fixed" vs "causal"
   const [simMode, setSimMode] = useState<"fixed" | "causal">("causal");
 
-  // Video fallback and accessibility state
-  const [videoError, setVideoError] = useState<boolean>(false);
+  // Accessibility state
   const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Check prefers-reduced-motion and screen size on mount
+  // Check prefers-reduced-motion on mount
   useEffect(() => {
     if (typeof window !== "undefined") {
       const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -37,21 +34,11 @@ export default function LandingPage() {
 
       const motionHandler = (e: MediaQueryListEvent) => {
         setPrefersReducedMotion(e.matches);
-        if (e.matches && videoRef.current) {
-          videoRef.current.pause();
-        }
       };
       motionQuery.addEventListener("change", motionHandler);
 
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
-
       return () => {
         motionQuery.removeEventListener("change", motionHandler);
-        window.removeEventListener("resize", checkMobile);
       };
     }
   }, []);
@@ -120,39 +107,38 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* 2. FULL-WIDTH CINEMATIC HERO SECTION WITH EMERALD BACKGROUND VIDEO */}
-      <section className="relative z-10 w-full overflow-hidden border-b border-[#1e293b]/70 min-h-[620px] lg:min-h-[680px] flex items-center">
+      {/* 2. INDUSTRIAL HERO SECTION */}
+      <section className="relative z-10 w-full overflow-hidden border-b border-[#1e293b]/70 min-h-[620px] lg:min-h-[680px] flex items-center bg-[#0b0f19]">
         
-        {/* Layer A: Full-Width Background Video + Visible Subtle Gradient Overlay */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-[#071d16] pointer-events-none">
-          {!prefersReducedMotion && !videoError && (
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload={isMobile ? "metadata" : "auto"}
-              onError={() => setVideoError(true)}
-              className="w-full h-full object-cover object-center opacity-75"
-              style={{
-                filter: "brightness(0.95) contrast(1.05)",
-              }}
-            >
-              <source src="/videos/lumino-hero.mp4" type="video/mp4" />
-            </video>
-          )}
-
-          {/* Subtle Dark Emerald Gradient Overlay (Preserves video visibility while keeping text crisp) */}
+        {/* Engineering Blueprint Grid & Deep Emerald Ambient Glow */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          {/* Subtle 40px industrial telemetry coordinate grid */}
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0 opacity-20"
             style={{
-              background: `linear-gradient(180deg, rgba(11, 15, 25, 0.40) 0%, rgba(7, 29, 22, 0.45) 35%, rgba(11, 15, 25, 0.75) 80%, #0b0f19 100%)`,
+              backgroundImage: `linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
+
+          {/* Deep Emerald Ambient Radial Glow */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `radial-gradient(circle at 50% 25%, rgba(15, 92, 69, 0.22) 0%, rgba(7, 29, 22, 0.12) 45%, transparent 75%)`,
+            }}
+          />
+
+          {/* Bottom fade into main body */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(180deg, transparent 65%, #0b0f19 100%)`,
             }}
           />
         </div>
 
-        {/* Layer B: Hero Interactive Content Container (Clean Two-Column Grid) */}
+        {/* Hero Interactive Content Container (Clean Two-Column Grid) */}
         <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
